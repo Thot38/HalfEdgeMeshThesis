@@ -11,6 +11,22 @@
 \usepackage[linesnumbered,ruled]{algorithm2e}
 \usepackage[table]{xcolor}
 \usepackage{subfig}
+\usepackage{listingsutf8}
+
+\lstset{ % General setup for the package
+	language=Java,
+	basicstyle=\small\sffamily,
+	numbers=left,
+	numberstyle=\tiny,
+	frame=tb,
+	tabsize=2,
+	columns=fixed,
+	showstringspaces=false,
+	showtabs=false,
+	keepspaces,
+	commentstyle=\color{red},
+	keywordstyle=\color{blue}
+}
 
 % Abstand obere Blattkante zur Kopfzeile ist 2.54cm - 15mm
 \setlength{\topmargin}{-15mm}
@@ -36,7 +52,7 @@
 			\vspace*{1.5cm}
 			
 			Erstellt von:\\
-			Yannick Dittmar\\Studiengang: Allgemeine Informatik\\ Matrikelnummer: 11117175
+			Yannick Dittmar\\Studiengang: Allgemeine Informatik\\ Matrikelnummer: 11117676
 			
 			\vspace*{1.5cm}
 			
@@ -53,5 +69,9 @@
 \pagestyle{headings}
 
 \input{1_Einleitung/Einleitung}	
+
+\newpage
+\bibliography{Hauptdokument}
+\bibliographystyle{alpha}
 
 \end{document}
