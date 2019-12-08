@@ -1,0 +1,134 @@
+\section{Half-Edge-Mesh}
+Um die oben genannten Problemstellungen zu l\"osen, gibt es andere Ans\"atze Polygonalnetze zu realisieren. Einer dieser L\"osungen ist das Konzept der Half-Edge-Meshes. Ein solches Mesh besteht aus folgenden Komponenten: 
+\begin{itemize}
+	\item eine Liste von Vertices
+	\item eine Liste von Faces
+	\item eine Liste von Half-Edges.
+\end{itemize}
+
+Die Vertices sind, wie im Unity-Mesh auch, die Eckpunkte der Polygonen. Die Vertices werden mithilfe von Half-Edges miteinander verbunden. 
+
+\subsection{Vertex}
+Ein Vertex ist ein Punkt im dreidimensionalen Raum und ist wie beim einfachen Mesh der Eckpunkt f\"ur die Polygonen. Neben einem \textit{Vector3} f\"ur die Position des Vertex wird eine Referenz auf eine ausgehende Half-Edge, sowie der Index des Vertex ben\"otigt.
+\\
+\begin{lstlisting}
+public class Vertex
+{
+	public event EventHandler PositionChangedEvent;
+	
+	public Vertex(Vector3 point)
+	{
+		Point = point;
+		Index = -1;
+	}
+
+	public Vertex(Vector3 point, int index)
+	{
+		Point = point;
+		Index = index;
+	}
+
+	public Vertex(float x, float y, float z) : this(new Vector3(x, y, z))
+	{ }
+
+	public Vertex(float x, float y, float z, int index) : this(new Vector3(x, y, z), index)
+	{ }
+
+	/// <summary>
+	/// The Index of the Vertex
+	/// </summary>
+	public int Index { get; set; }
+
+	private Vector3 _point;
+	/// <summary>
+	/// The Point
+	/// </summary>
+	public Vector3 Point
+	{
+		get => _point;
+		set
+		{
+			_point = value;
+			PositionChangedEvent?.Invoke(this, EventArgs.Empty);
+		}
+	}
+
+	/// <summary>
+	/// The Outgoing HalfEdge
+	/// </summary>
+	public HalfEdge HalfEdge { get; set; }
+}
+\end{lstlisting}
+
+\subsection{Face}
+Ein Objekt der Klasse Face repr\"asentiert die Faces des Meshs, die \"uber die Vertices aufgespannt werden. Dabei besitzt eine Face nur die Referenz auf eine der anliegenden Half-Edges um das Traversieren und Bearbeiten des Netzes auf Face-Ebene zu erm\"oglichen. Die Face-Klasse ist wie folgt aufgebaut:
+\begin{lstlisting}
+public class Face
+{
+	public Face(HalfEdge halfEdge)
+	{
+		HalfEdge = halfEdge;
+	}
+
+	/// <summary>
+	/// A bonding HalfEdge
+	/// </summary>
+	public HalfEdge HalfEdge { get; set; }
+}
+\end{lstlisting}
+
+\subsection{Half-Edge}
+Die Half-Edge Klasse ist die wichtigste Komponente f\"ur das Half-Edge-Mesh. Sie stellt alle Teile in Beziehung zueinander. Zu bemerken ist, dass ein Half-Edge-Mesh keine explizite Modellierung von Edges hat. Eine Edge wird implizit durch zwei Half-Edges abgebildet. Jede Half-Edge besitzt eine Referenz auf ihre gegen\"uberliegende Half-Edge, sowie auf die ihr Nachfolgende. Zudem referenziert jede Half-Edge den Vertex, aus dem sie hervorgeht und die Face, die sie einschlie{\ss}t. 
+\begin{lstlisting}
+public class HalfEdge
+{
+	public HalfEdge(Vertex outgoing, Face face, HalfEdge next)
+	{
+		OutgoingPoint = outgoing;
+		Face = face;
+		Next = next;
+		Index = -1;
+	}
+	
+	public HalfEdge(Vertex outgoing, Face face, HalfEdge next, int index)
+	{
+		OutgoingPoint = outgoing;
+		Face = face;
+		Next = next;
+		Index = index;
+	}
+	
+	public int Index { get; set; }
+	
+	/// <summary>
+	/// The Vertex the HalfEdge comes from
+	/// </summary>
+	public Vertex OutgoingPoint { get; set; }
+	
+	/// <summary>
+	/// The next HalfEdge, Counter Clockwise
+	/// </summary>
+	public HalfEdge Next { get; set; }
+	
+	/// <summary>
+	/// The opposing HalfEdge
+	/// </summary>
+	public HalfEdge Opposing { get; set; }
+	
+	/// <summary>
+	/// The face of the HalfEdge
+	/// </summary>
+	public Face Face { get; set; }
+	
+	/// <summary>
+	/// Getter for the previous HalfEdge, for easier access 
+	/// (this.Next.Next)
+	/// </summary>
+	public HalfEdge Previous => Next.Next;
+	
+	/// <summary>
+	/// Getter for the EndPoint of this HalfEdge, for easier access (this.Next.OutgoingPoint)
+	/// </summary>
+	public Vertex EndPoint => Next.OutgoingPoint;
+}
+\end{lstlisting} 

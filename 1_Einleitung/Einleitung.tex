@@ -63,12 +63,13 @@ public void CreateMesh()
 }
 \end{lstlisting}
 
-Und erzeugt folgendes Ergebnis:
+Und liefert folgendes Ergebnis:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.35\linewidth]{Images/UnityQuadWireframe}
-	\caption[Die Wireframeansicht des erstellten Meshes]{Die Wireframeansicht des erstellten Meshes}
+	\caption[Die Wireframeansicht des erstellten Meshes]{Die Wireframeansicht des erstellten Meshes im Unity Editor}
 	\label{fig:unityquadwireframe}
 \end{figure}
 
-
+\subsection{Nachteile von Unity-Meshes}
+Die Vorteile bei dieser Herangehensweise sind, dass die von Unity verwendeten Netze auch bei gr\"o{\ss}eren Netzen vergleichsweise wenig Speicherplatz ben\"otigen, da dieser Ansatz auf eine direkte Repr\"asentation von Faces und Edges verzichtet. Daraus ergeben sich einige Nachteile. Durch die fehlende Referenz auf die Polygonenfl\"achen sind Operationen auf Face-Ebene, wie eine Nachbarsuche, Abfragen auf alle Punkte Kanten oder die Unterteilung einzelner Polygonen in kleinere Einheiten (auch ,,Subdivision'' genannt), sehr Zeitintensiv, weshalb sich solche F\"alle nicht f\"ur Echtzeitanwendungen eignen. Des Weiteren stehen die Vertices im Unity-Mesh in keinem topographischen Zusammenhang, wodurch eine Iteration \"uber das gesamte Netz erschwert wird, um beispielsweise zusammenh\"angende Punkte zu bearbeiten.
