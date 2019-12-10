@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  5 DEC 2019 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  8 DEC 2019 13:20
 entering extended mode
 **./Hauptdokument.tex
 (Hauptdokument.tex
@@ -644,45 +644,22 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
-
- []
-
-[4 <./Images/UnityQuadWireframe.png>]
-Overfull \hbox (18.3439pt too wide) in paragraph at lines 31--32
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (136.60513pt too wide) in paragraph at lines 34--35
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[5]
-Overfull \hbox (18.3439pt too wide) in paragraph at lines 93--94
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[6]
-Overfull \hbox (149.74527pt too wide) in paragraph at lines 130--131
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][][][][][][][][][][] 
- []
-
-) [7] (Hauptdokument.bbl) [8] (Hauptdokument.aux)
+<Images/half-edge-mesh.png, id=22, 624.3325pt x 373.395pt>
+File: Images/half-edge-mesh.png Graphic file (type png)
+<use Images/half-edge-mesh.png>
+Package pdftex.def Info: Images/half-edge-mesh.png  used on input line 12.
+(pdftex.def)             Requested size: 313.69029pt x 187.61433pt.
+) [4 <./Images/UnityQuadWireframe.png>] (Hauptdokument.bbl) [5 <./Images/half-e
+dge-mesh.png>] (Hauptdokument.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 9979 strings out of 492895
- 160505 string characters out of 3122801
+ 9955 strings out of 492895
+ 160319 string characters out of 3122801
  566894 words of memory out of 3000000
- 13718 multiletter control sequences out of 15000+200000
+ 13693 multiletter control sequences out of 15000+200000
  11951 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,9n,54p,9094b,1749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -697,9 +674,9 @@ ss10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmssbx10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Yannick/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (8 pages, 164646 bytes).
+Output written on Hauptdokument.pdf (5 pages, 177120 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
