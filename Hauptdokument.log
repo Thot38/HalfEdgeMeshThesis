@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  8 DEC 2019 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  14 DEC 2019 16:34
 entering extended mode
 **./Hauptdokument.tex
 (Hauptdokument.tex
@@ -596,7 +596,16 @@ File: Images/Dolphin_triangle_mesh.png Graphic file (type png)
 Package pdftex.def Info: Images/Dolphin_triangle_mesh.png  used on input line 7
 .
 (pdftex.def)             Requested size: 313.69029pt x 193.45395pt.
- [2 <./Images/Dolphin_triangle_mesh.png (PNG copy)>]
+
+
+LaTeX Warning: Citation `WikipediaDolphin1' on page 2 undefined on input line 8
+.
+
+
+LaTeX Warning: Citation `WikipediaDolphin1' on page 2 undefined on input line 8
+.
+
+[2 <./Images/Dolphin_triangle_mesh.png (PNG copy)>]
 LaTeX Font Info:    Try loading font information for OMS+cmss on input line 20.
 
 LaTeX Font Info:    No file OMScmss.fd. on input line 20.
@@ -631,7 +640,7 @@ LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
 (Font)              for symbol `textless' on input line 22.
 
-<Images/UnityQuadWireframe.png, id=14, 165.0165pt x 163.812pt>
+<Images/UnityQuadWireframe.png, id=15, 165.0165pt x 163.812pt>
 File: Images/UnityQuadWireframe.png Graphic file (type png)
 <use Images/UnityQuadWireframe.png>
 Package pdftex.def Info: Images/UnityQuadWireframe.png  used on input line 69.
@@ -644,39 +653,140 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
-<Images/half-edge-mesh.png, id=22, 624.3325pt x 373.395pt>
+<Images/half-edge-mesh.png, id=23, 624.3325pt x 373.395pt>
 File: Images/half-edge-mesh.png Graphic file (type png)
 <use Images/half-edge-mesh.png>
 Package pdftex.def Info: Images/half-edge-mesh.png  used on input line 12.
 (pdftex.def)             Requested size: 313.69029pt x 187.61433pt.
-) [4 <./Images/UnityQuadWireframe.png>] (Hauptdokument.bbl) [5 <./Images/half-e
-dge-mesh.png>] (Hauptdokument.aux)
+[4 <./Images/UnityQuadWireframe.png>] [5 <./Images/half-edge-mesh.png>]
+Overfull \hbox (18.3439pt too wide) in paragraph at lines 32--33
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+<Images/ClassDiagramHalfEdgeMesh.png, id=32, 856.19875pt x 1539.7525pt>
+File: Images/ClassDiagramHalfEdgeMesh.png Graphic file (type png)
+<use Images/ClassDiagramHalfEdgeMesh.png>
+Package pdftex.def Info: Images/ClassDiagramHalfEdgeMesh.png  used on input lin
+e 46.
+(pdftex.def)             Requested size: 313.69029pt x 564.13127pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [6] (Hauptdokument.bbl
+! Missing $ inserted.
+<inserted text> 
+                $
+l.6 ...://commons.wikimedia.org/wiki/File:Dolphin_
+                                                  triangle_mesh.png#/media/F...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! You can't use `macro parameter character #' in math mode.
+l.6 ...ia.org/wiki/File:Dolphin_triangle_mesh.png#
+                                                  /media/File:Dolphin_triang...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Extra }, or forgotten $.
+l.6 ....png#/media/File:Dolphin_triangle_mesh.png}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Command \end{thebibliography} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \end{thebibliography}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
+               before end of `thebibliography' environment on input line 8.
+
+
+LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
+               before end of `thebibliography' environment on input line 8.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8 \end{thebibliography}
+                         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.8 \end{thebibliography}
+                         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (247.61806pt too wide) in paragraph at lines 4--9
+[]\OT1/cmr/m/n/12 Wikipedia the free en-cy-clo-pe-dia.  Po-ly-gon mesh, 2007.  
+https://commons.wikimedia.org/wiki/File:Dolphin$[]\OML/cmm/m/it/12 riangle[]esh
+:png=media=File \OT1/cmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+[]\OT1/cmr/m/n/12 David Sta-siuk Will Pear-son, Da-niel Pi-ker.  Plank-ton.  ht
+t-
+ []
+
+) [7] [8 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 9955 strings out of 492895
- 160319 string characters out of 3122801
+ 9981 strings out of 492895
+ 160781 string characters out of 3122801
  566894 words of memory out of 3000000
- 13693 multiletter control sequences out of 15000+200000
- 11951 words of font info for 46 fonts, out of 3000000 for 9000
+ 13716 multiletter control sequences out of 15000+200000
+ 13354 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,9n,54p,9094b,1749s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Yannick/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Yannick/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Us
-ers/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ss10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmssbx10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Yannick/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (5 pages, 177120 bytes).
+ts/cm/cmbx12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yannick/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Yannick/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr17.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Yannick/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Yannick/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users
+/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmti12.pfb>
+Output written on Hauptdokument.pdf (8 pages, 272074 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
