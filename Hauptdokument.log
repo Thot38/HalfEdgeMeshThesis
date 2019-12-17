@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  14 DEC 2019 16:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  15 DEC 2019 19:18
 entering extended mode
 **./Hauptdokument.tex
 (Hauptdokument.tex
@@ -663,16 +663,13 @@ Overfull \hbox (18.3439pt too wide) in paragraph at lines 32--33
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<Images/ClassDiagramHalfEdgeMesh.png, id=32, 856.19875pt x 1539.7525pt>
+<Images/ClassDiagramHalfEdgeMesh.png, id=32, 974.64125pt x 1423.3175pt>
 File: Images/ClassDiagramHalfEdgeMesh.png Graphic file (type png)
 <use Images/ClassDiagramHalfEdgeMesh.png>
 Package pdftex.def Info: Images/ClassDiagramHalfEdgeMesh.png  used on input lin
 e 46.
-(pdftex.def)             Requested size: 313.69029pt x 564.13127pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [6] (Hauptdokument.bbl
+(pdftex.def)             Requested size: 313.69029pt x 458.0988pt.
+[6]) [7] (Hauptdokument.bbl
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -698,95 +695,108 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8 
+    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-! LaTeX Error: Command \end{thebibliography} invalid in math mode.
+! Missing } inserted.
+<inserted text> 
+                }
+l.8 
+    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+[]\OT1/cmr/m/n/12 Wikipedia the free en-cy-clo-pe-dia.  Po-ly-gon mesh, 2007.
+ []
+
+
+Overfull \hbox (20.59177pt too wide) in paragraph at lines 4--8
+\OT1/cmr/m/n/12 https://commons.wikimedia.org/wiki/File:Dolphin$[]\OML/cmm/m/it
+/12 riangle[]esh:png=media=File \OT1/cmr/m/n/12 :
+ []
+
+
+! LaTeX Error: Environment WP17 undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.8 \end{thebibliography}
-                         
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.9 \begin{WP17}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
-               before end of `thebibliography' environment on input line 8.
-
-
-LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
-               before end of `thebibliography' environment on input line 8.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.8 \end{thebibliography}
-                         
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.8 \end{thebibliography}
-                         
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (247.61806pt too wide) in paragraph at lines 4--9
-[]\OT1/cmr/m/n/12 Wikipedia the free en-cy-clo-pe-dia.  Po-ly-gon mesh, 2007.  
-https://commons.wikimedia.org/wiki/File:Dolphin$[]\OML/cmm/m/it/12 riangle[]esh
-:png=media=File \OT1/cmr/m/n/12 :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--16
+Underfull \hbox (badness 10000) in paragraph at lines 11--15
 []\OT1/cmr/m/n/12 David Sta-siuk Will Pear-son, Da-niel Pi-ker.  Plank-ton.  ht
 t-
  []
 
-) [7] [8 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
+)
+
+! LaTeX Error: \begin{thebibliography} on input line 1 ended by \end{document}.
+
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 \end{document}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[8] [9 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 1 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 9981 strings out of 492895
- 160781 string characters out of 3122801
+ 10011 strings out of 492895
+ 161152 string characters out of 3122801
  566894 words of memory out of 3000000
- 13716 multiletter control sequences out of 15000+200000
+ 13746 multiletter control sequences out of 15000+200000
  13354 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,9n,54p,9094b,1749s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yannick/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Yannick/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+<C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yannick/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
 Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr17.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Yannick/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Yannick/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users
-/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (8 pages, 272074 bytes).
+cmr12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Yannick/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Yannick/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Ya
+nnick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10
+.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti12.pfb>
+Output written on Hauptdokument.pdf (9 pages, 284838 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

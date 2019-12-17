@@ -22,7 +22,7 @@ Die Klassen \textit{Vertex, HalfEdge} und \textit{Face} sind die Datenmodelle de
 \\
 Eine Half-Edge besitzt die oben erw\"ahnten Eingenschaften: den Punkt von dem sie ausgeht, die anliegende Face, die gegen\"uberliegende und n\"achste HalfEdge sowie den Index der HalfEdge. Wie auch der Index der Vertices, ist dieser Index f\"ur das Unity-Mesh wichtig.
 \\
-Die Face-Klasse besitzt nur eine Referenz auf eine anliegende HalfEdge.
+Die Face-Klasse besitzt eine Referenz auf eine anliegende HalfEdge und den Index der Face, diese wieder f\"ur die Arbeit mit dem Unity-Mesh.
 
 \subsection{Listenklassen}
 Objekte der Klassen \textit{Vertex, HalfEdge, Face} werden jeweils in einer Listenklasse gespeichert. Die Klassen \textit{VertexList, HalfEdgeList, FaceList} implementieren das \textit{IEnumerable}-Interface, um die Iteration \"uber die Elemente zu vereinfachen. Zudem beinhalten diese Klassen die Kernlogiken f\"ur die Komponenten. VertexList bietet die M\"oglichkeit, einen neuen Vertex hinzuzuf\"ugen oder einen zu entfernen, die HalfEdgeList verf\"ugt \"uber eine  \textit{CreateHalfEdge}-Methode, die wie folgt eine HalfEdge anlegt:
@@ -41,7 +41,7 @@ public HalfEdge CreateHalfEdge(Vertex vertex, Face face, HalfEdge next)
 
 Und auch die FaceList besitzt eine Create-Methode, um eine Fl\"ache korrekt anlegen zu k\"onnen. Dabei wird die Referenz der Face auf die HalfEdge gesetzt und umgekehrt. Eine Weitere wichtige Methode ist die \textit{GetFaceCirculator}-Methode, die eine Liste aller HalfEdges, die an einer gegebenen Face anliegen, zur\"uck gibt.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Images/ClassDiagramHalfEdgeMesh}
 	\caption[HalfEdgeMeshUMLDiagramm]{UML-Klassendiagramm des Half-Edge-Mesh Projekts}
@@ -49,5 +49,48 @@ Und auch die FaceList besitzt eine Create-Methode, um eine Fl\"ache korrekt anle
 \end{figure}
 
 
-\section{Implementierung des Half-Edge-Mesh}
+\section{Implementierung des Half-Edge-Meshes}
 Die Oben genannten Listenklassen werden von der \textit{HalfEdgeMesh}-Klasse verwendet, um aus der beschriebenen Half-Edge-Datenstruktur ein von Unity renderbares Mesh zu erstellen. 
+\\
+Um ein Dreieck, die einfachste m\"ogliche Netzstruktur zu erzeugen, kann die Methode \textit{CreateMesh} verwendet werden. Diese erstellt die drei Eckpunkte des Dreiecks, verbindet zwei mit einer neuen Half-Edge und erzeugt damit ein Face. Die Fl\"ache wird dann verwendet um die fehlenden Kanten mit Referenzen zu erzeugen und anschlie{\ss}end wird die Referenz der ersten Half-Edge auf die zweite gesetzt. Zum Schluss wird \textit{GenerateUnityMesh} aufgerufen um mit den angelegten Daten das UnityMesh zu generieren.
+\begin{lstlisting}
+
+public void CreateMesh(Vector3 va, Vector3 vb, Vector3 vc)
+{
+	var a = Vertices.CreateVertex(va);
+	var b = Vertices.CreateVertex(vb);
+	var c = Vertices.CreateVertex(vc);
+
+	var heA = HalfEdges.CreateHalfEdge(a, null, null);
+	var face = Faces.CreateFace(heA);
+	var heB = HalfEdges.CreateHalfEdge(b, face, heA);
+	var heC = HalfEdges.CreateHalfEdge(c, face, heB);
+	heA.Next = heC;
+
+	GenerateUnityMesh();
+}
+
+\end{lstlisting}
+Sollen beim erstellen des Netzes weitere Fl\"achen hinzugef\"ugt werden, ist es m\"oglich diese Methode zu erweitern oder weitere Faces mit \textit{AddFace} hinzuzuf\"ugen.
+
+\subsection{GenerateUnityMesh}
+Um aus den Daten des Half-Edge-Mesh ein f\"ur Unity brauchbares Mesh zu generieren, m\"ussen folgende Daten aus dem Half-Edge-Mesh entnommen werden: Die Position jedes Punktes, als Liste und ein Array mit der Reihenfolge, wie diese Punkte zu verbinden sind. Die Zusammenstellung dieser Daten passiert mit Hilfe von Linq. Hier der wichtigste Teil der \textit{GenerateUnityMesh}-Methode.
+\begin{lstlisting}
+	ClearMesh();
+	// --- Add vertices
+	var vertices = Vertices.Select(p => p.Point).ToList();
+
+	// --- Add triangles
+	foreach (var face in Faces)
+	{
+		var adjacentHalfEdges = Faces.GetFaceCirculator(face).ToList();
+		SetMeshTriangles(face.Index, adjacentHalfEdges
+		.Select(p => p.OutgoingPoint.Index).ToList(), true);
+	}
+
+	AddMeshVertices(vertices);
+	CommitMeshTriangles();
+\end{lstlisting}
+Da das Netz eines komplexen Modells sehr gro{\ss} werden kann, ist es f\"ur die Laufzeit von Vorteil, wenn bei lokalen \"Anderungen nicht das gesamte Netz neu generiert werden muss, wobei jedes Mal \"uber alle Punkte, Kanten und Fl\"achen iteriert werden muss. Stattdessen werden alle Punkte zus\"atzlich in einer Liste gespeichert, die beim bearbeiten des Netzes das UnityMesh aktualisiert. Werden dem Half-Edge-Mesh neue Punkte hinzugef\"ugt, k\"onnen diese mit den Methoden \textit{AddMeshVertex} und \textit{AddMeshVertices} erg\"anzt werden. Am Ende der Methode wird die aktualisierte Liste dem UnityMesh \"ubergeben. 
+\\
+Auch die Triangles des UnityMeshes werden gecached. Jede Face des Half-Edge-Meshes bedutet drei Eintr\"age in dem Triangle-Array, von jedem Ausgangspunkt der Kanten wird der Index gespeichert. Weil Ver\"anderungen des Half-Edge-Meshes, die die Topographie des Netzes \"andern, immer zur Folge haben, dass sich die Dreiecke des Netzes mit \"andern, werden diese 
