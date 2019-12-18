@@ -12,7 +12,7 @@ In der Computergrafik werden dreidimensionale Modelle als Polygonen-Netz (Polygo
 \section{Unity}
 Unity ist eine Spiele-Engine mit eingebauter Entwicklungsumgebung f\"ur 2D-, 3D- und VR-Spiele/-Simulationen. Die Engine kommt mit einem eigenen Editor, in welchem diverse Szenarien erstellt und bearbeitet werden k\"onnen. Des Weiteren unterst\"utzt Unity selbst programmierte Scripte auf der Grundlage von C\#.
 \subsection{Meshes in Unity}
-Unity bietet die M\"oglichkeit, mit Hilfe von selbstgeschriebenen Scripten eigene 3D-Modelle zur Laufzeit erstellen zu lassen. Daf\"ur stellt Unity ein eigenes Mesh-System zur Verf\"ugung, basierend auf Dreiecksnetzen, die \textit{UnityEngine.Mesh}-Klasse. Damit diese ein Mesh rendern kann, erwartet das Mesh ein \textit{UnityEngine.Vector3}-Array f\"ur die Vertices, wobei ein \textit{Vector3} einen Punkt im dreidimensionalen Raum darstellt und ein \textit{int}-Array, das die Reihenfolge der Vertices f\"ur die Dreiecke festlegt.   
+Unity bietet die M\"oglichkeit, mit Hilfe von selbstgeschriebenen Scripten eigene 3D-Modelle zur Laufzeit erstellen zu lassen. Daf\"ur stellt Unity ein eigenes Mesh-System zur Verf\"ugung, basierend auf Dreiecksnetzen, die \textit{UnityEngine.Mesh}-Klasse. Damit diese ein Mesh rendern kann, erwartet das Mesh ein \textit{UnityEngine.Vector3}-Array f\"ur die Vertices, wobei ein \textit{Vector3} einen Punkt im dreidimensionalen Raum darstellt und ein \textit{int}-Array, das die Reihenfolge der Vertices (\"uber die Indices der Vertices) f\"ur die Dreiecke festlegt.   
 \\
 Der folgende Code zeigt beispielhaft, wie ein Unity-Mesh erzeugt werden kann:
 \begin{lstlisting}
