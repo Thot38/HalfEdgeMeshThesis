@@ -1,0 +1,16 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Einleitung}{2}% 
+\contentsline {section}{\numberline {2}Unity}{2}% 
+\contentsline {subsection}{\numberline {2.1}Meshes in Unity}{2}% 
+\contentsline {subsection}{\numberline {2.2}Nachteile von Unity-Meshes}{4}% 
+\contentsline {section}{\numberline {3}Half-Edge-Mesh}{5}% 
+\contentsline {subsection}{\numberline {3.1}Klassenstruktur}{6}% 
+\contentsline {subsection}{\numberline {3.2}Die Vertex, HalfEdge und Face Klassen}{6}% 
+\contentsline {subsection}{\numberline {3.3}Listenklassen}{6}% 
+\contentsline {section}{\numberline {4}Implementierung des Half-Edge-Meshes}{7}% 
+\contentsline {subsection}{\numberline {4.1}GenerateUnityMesh}{7}% 
+\contentsline {section}{\numberline {5}Algorithmen}{8}% 
+\contentsline {subsection}{\numberline {5.1}Subdivision von Faces}{8}% 
+\contentsline {subsection}{\numberline {5.2}Teilen von HalfEdges}{8}% 
+\contentsline {subsection}{\numberline {5.3}Breaking-Algorithmus}{8}% 
+\contentsline {subsection}{\numberline {5.4}Smooting-Algorithmus}{8}% 

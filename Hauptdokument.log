@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  19 DEC 2019 09:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  11 JAN 2020 16:21
 entering extended mode
 **./Hauptdokument.tex
 (Hauptdokument.tex
@@ -588,8 +588,29 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count133
  [1
 
-{C:/Users/Yannick/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (1_Einlei
-tung/Einleitung.tex
+{C:/Users/Yannick/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Hauptdok
+ument.toc
+LaTeX Font Info:    Try loading font information for U+lasy on input line 4.
+
+("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+
+("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
+"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
+"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write3
+\openout3 = `Hauptdokument.toc'.
+
+ (1_Einleitung/Einleitung.tex
 <Images/Dolphin_triangle_mesh.png, id=7, 636.3775pt x 392.46625pt>
 File: Images/Dolphin_triangle_mesh.png Graphic file (type png)
 <use Images/Dolphin_triangle_mesh.png>
@@ -605,7 +626,10 @@ LaTeX Warning: Citation `WikipediaDolphin1' on page 2 undefined on input line 8
 LaTeX Warning: Citation `WikipediaDolphin1' on page 2 undefined on input line 8
 .
 
-[2 <./Images/Dolphin_triangle_mesh.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2]
 LaTeX Font Info:    Try loading font information for OMS+cmss on input line 20.
 
 LaTeX Font Info:    No file OMScmss.fd. on input line 20.
@@ -615,38 +639,22 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 20.
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 21.
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
-"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
-"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 LaTeX Font Info:    Try loading font information for OML+cmss on input line 22.
 
 LaTeX Font Info:    No file OMLcmss.fd. on input line 22.
-
 
 LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
 (Font)              for symbol `textless' on input line 22.
 
-[3]
+[3 <./Images/Dolphin_triangle_mesh.png (PNG copy)>]
 <Images/UnityQuadWireframe.png, id=22, 165.0165pt x 163.812pt>
 File: Images/UnityQuadWireframe.png Graphic file (type png)
 <use Images/UnityQuadWireframe.png>
 Package pdftex.def Info: Images/UnityQuadWireframe.png  used on input line 69.
 (pdftex.def)             Requested size: 156.84856pt x 155.70299pt.
-) (2_HalfEdgeMesh/HalfEdgeMesh.tex
+)
+(2_HalfEdgeMesh/HalfEdgeMesh.tex [4 <./Images/UnityQuadWireframe.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
 
 ("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
@@ -654,12 +662,12 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
-<Images/half-edge-mesh.png, id=23, 624.3325pt x 373.395pt>
+<Images/half-edge-mesh.png, id=26, 624.3325pt x 373.395pt>
 File: Images/half-edge-mesh.png Graphic file (type png)
 <use Images/half-edge-mesh.png>
 Package pdftex.def Info: Images/half-edge-mesh.png  used on input line 12.
 (pdftex.def)             Requested size: 313.69029pt x 187.61433pt.
-[4 <./Images/UnityQuadWireframe.png>] [5 <./Images/half-edge-mesh.png>]
+[5 <./Images/half-edge-mesh.png>]
 Overfull \hbox (18.3439pt too wide) in paragraph at lines 32--33
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -670,7 +678,7 @@ File: Images/ClassDiagramHalfEdgeMesh.png Graphic file (type png)
 Package pdftex.def Info: Images/ClassDiagramHalfEdgeMesh.png  used on input lin
 e 46.
 (pdftex.def)             Requested size: 313.69029pt x 458.0988pt.
-[6]) (3_Algorithmen/Algorithmen.tex [7]) [8] (Hauptdokument.bbl
+[6] [7]) (3_Algorithmen/Algorithmen.tex) [8] (Hauptdokument.bbl
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -804,15 +812,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 10017 strings out of 492895
- 161387 string characters out of 3122801
- 566894 words of memory out of 3000000
- 13747 multiletter control sequences out of 15000+200000
+ 10031 strings out of 492895
+ 161706 string characters out of 3122801
+ 555894 words of memory out of 3000000
+ 13758 multiletter control sequences out of 15000+200000
  13354 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,9n,54p,9094b,1758s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 50i,9n,54p,9094b,1762s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX
@@ -828,7 +839,7 @@ Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users
 /Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (10 pages, 290352 bytes).
+Output written on Hauptdokument.pdf (10 pages, 291718 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
