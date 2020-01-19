@@ -1,16 +1,20 @@
 \babel@toc {ngerman}{}
-\contentsline {section}{\numberline {1}Einleitung}{2}% 
-\contentsline {section}{\numberline {2}Unity}{2}% 
-\contentsline {subsection}{\numberline {2.1}Meshes in Unity}{2}% 
-\contentsline {subsection}{\numberline {2.2}Nachteile von Unity-Meshes}{4}% 
-\contentsline {section}{\numberline {3}Half-Edge-Mesh}{5}% 
-\contentsline {subsection}{\numberline {3.1}Klassenstruktur}{6}% 
-\contentsline {subsection}{\numberline {3.2}Die Vertex, HalfEdge und Face Klassen}{6}% 
-\contentsline {subsection}{\numberline {3.3}Listenklassen}{6}% 
-\contentsline {section}{\numberline {4}Implementierung des Half-Edge-Meshes}{7}% 
-\contentsline {subsection}{\numberline {4.1}GenerateUnityMesh}{7}% 
-\contentsline {section}{\numberline {5}Algorithmen}{8}% 
-\contentsline {subsection}{\numberline {5.1}Subdivision von Faces}{8}% 
-\contentsline {subsection}{\numberline {5.2}Teilen von HalfEdges}{8}% 
-\contentsline {subsection}{\numberline {5.3}Breaking-Algorithmus}{8}% 
-\contentsline {subsection}{\numberline {5.4}Smooting-Algorithmus}{8}% 
+\contentsline {section}{\numberline {1}Grundlagen}{2}% 
+\contentsline {subsection}{\numberline {1.1}Unity3D}{2}% 
+\contentsline {subsection}{\numberline {1.2}Triangular Meshes}{3}% 
+\contentsline {subsection}{\numberline {1.3}Triangular Meshes in Unity}{4}% 
+\contentsline {subsection}{\numberline {1.4}Datenstrukturen f\"ur Meshes}{5}% 
+\contentsline {subsubsection}{\numberline {1.4.1}Triangle-Neighbor Structure}{5}% 
+\contentsline {subsubsection}{\numberline {1.4.2}Winged-Edge Mesh}{6}% 
+\contentsline {section}{\numberline {2}Half-Edge Mesh}{7}% 
+\contentsline {subsection}{\numberline {2.1}Vergleich mir anderen Datenstrukturen}{8}% 
+\contentsline {section}{\numberline {3}Einleitung}{8}% 
+\contentsline {section}{\numberline {4}Unity}{8}% 
+\contentsline {subsection}{\numberline {4.1}Meshes in Unity}{9}% 
+\contentsline {subsection}{\numberline {4.2}Nachteile von Unity-Meshes}{10}% 
+\contentsline {section}{\numberline {5}Half-Edge-Mesh}{10}% 
+\contentsline {subsection}{\numberline {5.1}Klassenstruktur}{11}% 
+\contentsline {subsection}{\numberline {5.2}Die Vertex, HalfEdge und Face Klassen}{11}% 
+\contentsline {subsection}{\numberline {5.3}Listenklassen}{12}% 
+\contentsline {section}{\numberline {6}Implementierung des Half-Edge-Meshes}{12}% 
+\contentsline {subsection}{\numberline {6.1}GenerateUnityMesh}{13}% 
