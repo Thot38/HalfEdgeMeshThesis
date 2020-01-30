@@ -135,3 +135,83 @@ Da das Netz eines komplexen Modells sehr gro{\ss} werden kann, ist es f\"ur die 
 Auch die Triangles des UnityMeshes werden gecached. Da Manipulationen des Meshes in der Regel bedeuten, dass sich die Triangels relativ zu den drei Punkte einer Face ver\"andern, werden diese in dreier Tuplen in ein Dictionary geschrieben. Der Schl\"ussel ist dabei der Index der Face. Die Indexliste l\"asst sich mit \textit{SetMeshTriangles} bearbeiten. Dabei wird ein Eintrag an der Stelle des Faceindex hinzugef\"ugt, sofern er nicht vorhanden ist oder ver\"andert, falls ein Eintrag existiert. Wichtig ist dies zum Beispiel, wenn eine Face geteilt wird und ein Dreieckseintrag mit zwei von drei Punkten \"ubernommen wird. Als weiteren Parameter kann angegeben werden, ob eine Ver\"anderung Teil einer gr\"o{\ss}eren Transaktion war, um zu vermeiden, dass bei umfangreicheren Operationen, wie der Subdivision aller Faces, f\"ur jeden Methodenaufruf das Dictionary in eine Liste umzuwandeln und das Mesh erneut rendern zu m\"ussen. Wird diese Option verwendet, muss nach Abschluss der Transaktion \textit{CommitMeshTriangles} ausgef\"uhrt werden, um die \"Anderungen ins Mesh zu \"ubernehmen.
 
 \subsubsection{GenerateHalfEdgeMesh}
+Andersherum kann es genauso sinnvoll sein, ein bestehendes UnityMesh in ein Half-Edge Mesh umzuwandeln, um die Vorteile dieser nutzen zu k\"onnen. Die Logik dahinter ist in der \textit{HalfEdgeMeshBuilder}-Klasse ausgelagert. Der Builder kann dem HalfEdgeMesh hinzugef\"ugt werden und besitzt eine Referenz auf das HalfEdgeMesh, um dieses bearbeiten zu k\"onnen. Um ein UnityMesh in ein HalfEdgeMesh zu \"uberf\"uhren, kann die \textit{BuildHalfEdgeMeshFromUnityMesh} verwendet werden. Diese Methode f\"ullt die drei Komponentenlisten anhand der Daten aus dem UnityMesh. 
+Um dies zu erreichen gelten drei Grunds\"atze:
+\begin{enumerate}
+	\item F\"ur jeden Punkte gibt es einen Vertex
+	\item F\"ur jeden Index gibt es eine HalfEdge, vom Punkt mit dem Index ausgehend
+	\item Jeweils drei Indices bilden eine Face.
+\end{enumerate}
+\begin{lstlisting}
+public void BuildHalfEdgeFromUnityMesh(Mesh mesh)
+{
+	List<Vector3> vertices = mesh.vertices;
+	List<int> triangles = mesh.triangles;
+	// --- Add vertices to HalfEdgeMesh
+	int[] indexChanges = new int[vertices.Length];
+	for (int i = 0; i < vertices.Length; i++)
+	{
+		Vector3 point = vertices[i];
+		// --- CreateVertex checks if position is already saved 
+		// --- and returns the first matching Vertex
+		Vertex vertex = _mesh.Vertices.CreateVertex(point);
+		
+		// --- Saving the index change
+		indexChanges[i] = vertex.Index;
+	}
+	
+	// --- Change Vertex Index to first occurence
+	if (indexChanges.Any())
+	{
+		for (int i = 0; i < triangles.Length; i++)
+		{
+			// --- change here!
+			triangles[i] = indexChanges[triangles[i]];
+		}
+	}
+	
+	// --- For every three indices in triangles (= a face) add a face 
+	// --- and three halfEdges
+	for (int i = 0; i < triangles.Length - 3; i += 3)
+	{
+		Vertex point1 = _mesh.Vertices[triangles[i]];
+		Vertex point2 = _mesh.Vertices[triangles[i + 1]];
+		Vertex point3 = _mesh.Vertices[triangles[i + 2]];
+		int[] indices = new[] 
+		{ point1.Index, point2.Index, point3.Index };
+		List<HalfEdges> pairs = _mesh.HalfEdges
+		.Where(p => indices.Contains(p.OutgoingPoint.Index)
+		&& indices.Contains(p.EndPoint.Index));
+	
+		HalfEdge halfEdge1 = _mesh.HalfEdges
+		.CreateHalfEdge(point1, null, null);
+	
+		Face face = _mesh.Faces.CreateFace(halfEdge1);
+	
+		HalfEdge halfEdge2 = _mesh.HalfEdges
+		.CreateHalfEdge(point2, face, halfEdge1);
+		HalfEdge halfEdge3 = _mesh.HalfEdges
+		.CreateHalfEdge(point3, face, halfEdge2);
+		halfEdge1.Next = halfEdge3;
+	
+		foreach (HalfEdge pair in pairs)
+		{
+			if (pair.OutgoingPoint.Index == halfEdge1.EndPoint.Index 
+			&& pair.EndPoint.Index == halfEdge1.OutgoingPoint.Index)
+				_mesh.HalfEdges.CreatePair(pair, halfEdge1);
+			else if (pair.OutgoingPoint.Index == halfEdge2.EndPoint.Index 
+			&& pair.EndPoint.Index == halfEdge2.OutgoingPoint.Index)
+				_mesh.HalfEdges.CreatePair(pair, halfEdge2);
+			else if (pair.OutgoingPoint.Index == halfEdge3.EndPoint.Index 
+			&& pair.EndPoint.Index == halfEdge3.OutgoingPoint.Index)
+				_mesh.HalfEdges.CreatePair(pair, halfEdge3);
+		}
+	}
+}
+\end{lstlisting}
+Beim Erstellen des HalfEdgeMeshes muss beachtet werden, dass beim erzeugen eines Vertex mit \textit{\_mesh.Vertices.CreateVertex(point)} gepr\"uft wird, ob dieser Punkt bereits vorhanden ist, um redundante Daten zu vermeiden und ein zusammenh\"angendes Netz zu garantieren. Wenn in einem UnityMesh allerdings einen Punkt im \textit{vertices}-Array mehrfach vorkommt, verschieben sich nach dieser Stelle alle weiteren Indices. Somit muss zu beginn das UnityMesh ,,bereinigt'' werden. Beim Erstellen der Vertices werden etwaige Index\"anderungen gespeichert und f\"ur alle Indices gepr\"uft. Anschlie{\ss}end werden, wie beim erstellen des UnityMeshes auch, jeweils drei Indices gleichzeitig betrachtet. Zu den Punkten hinter den Indices wird je eine HalfEdge erstellt und zu jeder Triplette wird eine Face erstellt, mit Referenz auf eine der HalfEdges. Zudem m\"ussen alle HalfEdges, die ein Paar mit einer aktuell betrachteten HalfEdge bilden, ermittelt werden. Daf\"ur werden alle HalfEdges gesucht, dessen eingehender und ausgehender Punkt in der Liste der aktuell betrachteten Punkte liegt: 
+\begin{lstlisting}
+List<HalfEdge> pairs = _mesh.HalfEdges
+.Where(p => indices.Contains(p.OutgoingPoint.Index)
+&& indices.Contains(p.EndPoint.Index));
+\end{lstlisting}
