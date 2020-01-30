@@ -22,7 +22,7 @@ Jede der vorgestellten Datenstrukturen kommt mit Vor- und Nachteilen. Die Entsch
 	\caption{Vergleich der Datenstrukturen}
 	\centering
 		\begin{tabular}{|c|c|c|c|c|}
-			\hline 
+			\hline \rowcolor{gray}
 		& Indexed Mesh & TNS & WEM & HEM \\ 
 		\hline 
 		Relativer Speicherbedarf & $36 \times n_v  Byte$ & $116 \times n_v  Byte$ & $228 \times n_v  Byte$ & $228 \times n_v  Byte$ \\ 
@@ -78,7 +78,18 @@ public HalfEdge CreateHalfEdge(Vertex vertex, Face face, HalfEdge next)
 
 \end{lstlisting}
 
-Und auch die FaceList besitzt eine Create-Methode, um eine Fl\"ache korrekt anlegen zu k\"onnen. Dabei wird die Referenz der Face auf die HalfEdge gesetzt und umgekehrt. Eine Weitere wichtige Methode ist die \textit{GetFaceCirculator}-Methode, die eine Liste aller HalfEdges, die an einer gegebenen Face anliegen, zur\"uck gibt.
+Und auch die FaceList besitzt eine Create-Methode, um eine Fl\"ache korrekt anlegen zu k\"onnen. Dabei wird die Referenz der Face auf die HalfEdge gesetzt und umgekehrt. Eine Weitere wichtige Methode ist die \textit{GetFaceCirculator}-Methode, die eine Liste aller HalfEdges, die an einer gegebenen Face anliegen, zur\"uck gibt:
+
+\begin{lstlisting}
+public List<HalfEdge> GetFaceCirculator(Face f)
+{
+	List<HalfEdge> result = new List<HalfEdge>();
+	result.Add(f.HalfEdge);
+	result.Add(f.HalfEdge.Previous);
+	result.Add(f.HalfEdge.Previous.Previous);
+	return result;
+}
+\end{lstlisting}
 
 \begin{figure}[t]
 	\centering
@@ -131,11 +142,11 @@ Um aus den Daten des Half-Edge-Mesh ein f\"ur Unity brauchbares Mesh zu generier
 	CommitMeshTriangles();
 \end{lstlisting}
 Da das Netz eines komplexen Modells sehr gro{\ss} werden kann, ist es f\"ur die Laufzeit von Vorteil, wenn bei lokalen \"Anderungen nicht das gesamte Netz neu generiert werden muss, wobei jedes Mal \"uber alle Punkte, Kanten und Fl\"achen iteriert werden muss. Stattdessen werden alle Punkte zus\"atzlich in einer Liste gespeichert, die beim bearbeiten des Netzes das UnityMesh aktualisiert. Werden dem Half-Edge-Mesh neue Punkte hinzugef\"ugt, k\"onnen diese mit den Methoden \textit{AddMeshVertex} und \textit{AddMeshVertices} erg\"anzt werden. Am Ende der Methode wird die aktualisierte Liste dem UnityMesh \"ubergeben. 
-\\
+
 Auch die Triangles des UnityMeshes werden gecached. Da Manipulationen des Meshes in der Regel bedeuten, dass sich die Triangels relativ zu den drei Punkte einer Face ver\"andern, werden diese in dreier Tuplen in ein Dictionary geschrieben. Der Schl\"ussel ist dabei der Index der Face. Die Indexliste l\"asst sich mit \textit{SetMeshTriangles} bearbeiten. Dabei wird ein Eintrag an der Stelle des Faceindex hinzugef\"ugt, sofern er nicht vorhanden ist oder ver\"andert, falls ein Eintrag existiert. Wichtig ist dies zum Beispiel, wenn eine Face geteilt wird und ein Dreieckseintrag mit zwei von drei Punkten \"ubernommen wird. Als weiteren Parameter kann angegeben werden, ob eine Ver\"anderung Teil einer gr\"o{\ss}eren Transaktion war, um zu vermeiden, dass bei umfangreicheren Operationen, wie der Subdivision aller Faces, f\"ur jeden Methodenaufruf das Dictionary in eine Liste umzuwandeln und das Mesh erneut rendern zu m\"ussen. Wird diese Option verwendet, muss nach Abschluss der Transaktion \textit{CommitMeshTriangles} ausgef\"uhrt werden, um die \"Anderungen ins Mesh zu \"ubernehmen.
 
 \subsubsection{GenerateHalfEdgeMesh}
-Andersherum kann es genauso sinnvoll sein, ein bestehendes UnityMesh in ein Half-Edge Mesh umzuwandeln, um die Vorteile dieser nutzen zu k\"onnen. Die Logik dahinter ist in der \textit{HalfEdgeMeshBuilder}-Klasse ausgelagert. Der Builder kann dem HalfEdgeMesh hinzugef\"ugt werden und besitzt eine Referenz auf das HalfEdgeMesh, um dieses bearbeiten zu k\"onnen. Um ein UnityMesh in ein HalfEdgeMesh zu \"uberf\"uhren, kann die \textit{BuildHalfEdgeMeshFromUnityMesh} verwendet werden. Diese Methode f\"ullt die drei Komponentenlisten anhand der Daten aus dem UnityMesh. 
+Andersherum kann es genauso sinnvoll sein, ein bestehendes UnityMesh in ein Half-Edge Mesh umzuwandeln, um die Vorteile dieser nutzen zu k\"onnen. Die Logik dahinter befindet sich in der \textit{HalfEdgeMeshBuilder}-Klasse. Der Builder kann dem HalfEdgeMesh hinzugef\"ugt werden und besitzt eine Referenz auf das HalfEdgeMesh, um dieses bearbeiten zu k\"onnen. Um ein UnityMesh in ein HalfEdgeMesh zu \"uberf\"uhren, kann die \textit{BuildHalfEdgeMeshFromUnityMesh} verwendet werden. Diese Methode f\"ullt die drei Komponentenlisten anhand der Daten aus dem UnityMesh. 
 Um dies zu erreichen gelten drei Grunds\"atze:
 \begin{enumerate}
 	\item F\"ur jeden Punkte gibt es einen Vertex
@@ -209,7 +220,9 @@ public void BuildHalfEdgeFromUnityMesh(Mesh mesh)
 	}
 }
 \end{lstlisting}
-Beim Erstellen des HalfEdgeMeshes muss beachtet werden, dass beim erzeugen eines Vertex mit \textit{\_mesh.Vertices.CreateVertex(point)} gepr\"uft wird, ob dieser Punkt bereits vorhanden ist, um redundante Daten zu vermeiden und ein zusammenh\"angendes Netz zu garantieren. Wenn in einem UnityMesh allerdings einen Punkt im \textit{vertices}-Array mehrfach vorkommt, verschieben sich nach dieser Stelle alle weiteren Indices. Somit muss zu beginn das UnityMesh ,,bereinigt'' werden. Beim Erstellen der Vertices werden etwaige Index\"anderungen gespeichert und f\"ur alle Indices gepr\"uft. Anschlie{\ss}end werden, wie beim erstellen des UnityMeshes auch, jeweils drei Indices gleichzeitig betrachtet. Zu den Punkten hinter den Indices wird je eine HalfEdge erstellt und zu jeder Triplette wird eine Face erstellt, mit Referenz auf eine der HalfEdges. Zudem m\"ussen alle HalfEdges, die ein Paar mit einer aktuell betrachteten HalfEdge bilden, ermittelt werden. Daf\"ur werden alle HalfEdges gesucht, dessen eingehender und ausgehender Punkt in der Liste der aktuell betrachteten Punkte liegt: 
+Beim Erstellen des HalfEdgeMeshes muss beachtet werden, dass beim erzeugen eines Vertex mit \textit{\_mesh.Vertices.CreateVertex(point)} gepr\"uft wird, ob dieser Punkt bereits vorhanden ist, um redundante Daten zu vermeiden und ein zusammenh\"angendes Netz zu garantieren. Wenn in einem UnityMesh allerdings einen Punkt im \textit{vertices}-Array mehrfach vorkommt, verschieben sich nach dieser Stelle alle weiteren Indices. Somit muss zu beginn das UnityMesh ,,bereinigt'' werden. Beim Erstellen der Vertices werden etwaige Index\"anderungen gespeichert und f\"ur alle Indices gepr\"uft. Anschlie{\ss}end werden, wie beim erstellen des UnityMeshes auch, jeweils drei Indices gleichzeitig betrachtet.
+
+Zu den Punkten hinter den Indices wird je eine HalfEdge erstellt und zu jeder Triplette wird eine Face erstellt, mit Referenz auf eine der HalfEdges. Zudem m\"ussen alle HalfEdges, die ein Paar mit einer aktuell betrachteten HalfEdge bilden, ermittelt werden. Daf\"ur werden alle HalfEdges gesucht, dessen eingehender und ausgehender Punkt in der Liste der aktuell betrachteten Punkte liegt: 
 \begin{lstlisting}
 List<HalfEdge> pairs = _mesh.HalfEdges
 .Where(p => indices.Contains(p.OutgoingPoint.Index)

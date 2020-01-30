@@ -12,11 +12,13 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Klassenstruktur}{8}% 
 \contentsline {subsubsection}{\numberline {2.2.2}Die Vertex, HalfEdge und Face Klassen}{9}% 
 \contentsline {subsubsection}{\numberline {2.2.3}Listenklassen}{9}% 
-\contentsline {subsection}{\numberline {2.3}Erstellen eines Half-Edge-Meshes}{9}% 
+\contentsline {subsection}{\numberline {2.3}Erstellen eines Half-Edge-Meshes}{10}% 
 \contentsline {subsubsection}{\numberline {2.3.1}GenerateUnityMesh}{10}% 
 \contentsline {subsubsection}{\numberline {2.3.2}GenerateHalfEdgeMesh}{11}% 
-\contentsline {section}{\numberline {3}Rechnungen}{13}% 
-\contentsline {subsection}{\numberline {3.1}Indexed Mesh}{14}% 
-\contentsline {subsection}{\numberline {3.2}Triangle-Neighbor Structure}{14}% 
-\contentsline {subsection}{\numberline {3.3}Winged-Edge Mesh}{14}% 
-\contentsline {subsection}{\numberline {3.4}Half-Edge Mesh}{14}% 
+\contentsline {section}{\numberline {3}Operationen}{13}% 
+\contentsline {subsection}{\numberline {3.1}Split Half-Edge}{14}% 
+\contentsline {section}{\numberline {4}Rechnungen}{16}% 
+\contentsline {subsection}{\numberline {4.1}Indexed Mesh}{17}% 
+\contentsline {subsection}{\numberline {4.2}Triangle-Neighbor Structure}{17}% 
+\contentsline {subsection}{\numberline {4.3}Winged-Edge Mesh}{17}% 
+\contentsline {subsection}{\numberline {4.4}Half-Edge Mesh}{17}% 
