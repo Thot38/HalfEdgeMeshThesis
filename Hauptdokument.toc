@@ -17,8 +17,10 @@
 \contentsline {subsubsection}{\numberline {2.3.2}GenerateHalfEdgeMesh}{11}% 
 \contentsline {section}{\numberline {3}Operationen}{13}% 
 \contentsline {subsection}{\numberline {3.1}Split Half-Edge}{14}% 
-\contentsline {section}{\numberline {4}Rechnungen}{16}% 
-\contentsline {subsection}{\numberline {4.1}Indexed Mesh}{17}% 
-\contentsline {subsection}{\numberline {4.2}Triangle-Neighbor Structure}{17}% 
-\contentsline {subsection}{\numberline {4.3}Winged-Edge Mesh}{17}% 
-\contentsline {subsection}{\numberline {4.4}Half-Edge Mesh}{17}% 
+\contentsline {subsection}{\numberline {3.2}Edge Collapse}{17}% 
+\contentsline {subsection}{\numberline {3.3}Subdivision}{17}% 
+\contentsline {section}{\numberline {4}Rechnungen}{18}% 
+\contentsline {subsection}{\numberline {4.1}Indexed Mesh}{19}% 
+\contentsline {subsection}{\numberline {4.2}Triangle-Neighbor Structure}{19}% 
+\contentsline {subsection}{\numberline {4.3}Winged-Edge Mesh}{19}% 
+\contentsline {subsection}{\numberline {4.4}Half-Edge Mesh}{19}% 

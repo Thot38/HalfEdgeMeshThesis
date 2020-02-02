@@ -26,12 +26,12 @@ Ziel der \textit{SplitHalfEdge}-Methode ist es, eine HalfEdge so zu teilen, dass
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/splitHalfEdge}
-	\caption{Schematische Darstellung eines Edge splits. In Bild 1 ist die Ausgangssituation, Bild 2 zeigt Schritt 2, die Bilder 3 und 4 zeigen die Schritte 3 und 4 und Bild 5 zeigt das Ergebnis, nach den Schritten 5 und 6.}
+	\caption{Schematische Darstellung eines Edgesplits. In Bild 1 ist die Ausgangssituation dargestellt, Bild 2 zeigt Schritt 2, die Bilder 3 und 4 zeigen die Schritte 3 und 4 und Bild 5 zeigt das Ergebnis, nach den Schritten 5 und 6.}
 	\label{fig:splithalfedge}
 \end{figure}
 
 
-Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden HalfEdges einer Face zur\"uckgibt. Er ist im Folgenden implementiert:
+Der beschriebene Algorithmus ist im Folgenden implementiert:
 \begin{lstlisting}
 private bool _lock = false;
 private HalfEdge _newHalfEdge, _split;
@@ -102,3 +102,74 @@ In wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{
 	\caption{Bild 1 ist das Ausgangsmesh, welches in Bild 2 in der Mitte der Diagonale gesplittet wurde, in Bild 3 ein viertel auf dem Weg nach oben, auf der linken Seite und im 4. Bild eine Einheit links von der Kante}
 	\label{fig:meshmash}
 \end{figure}
+
+Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da alle \"Anderungen lokal an den betroffenen HalfEdges vorgenommen werden k\"onnen und die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden HalfEdges einer Face zur\"uckgibt. Wird im Gegensatz dazu die selbe Operation nur mithilfe vom UnityMesh versucht, so m\"usste mittels Brute-Force zuerst jeder Index der Eckpunkte der gesuchten Kante ermittelt werden, da diese nicht explizit dargestellt wird, um anschlie{\ss}end in den Indices die Dreiecke zu finden, die diese Eckpunkte verwenden, damit diese durch die neu bestimmten Dreiecke ersetzt werden k\"onnen. Daraus resultiert einen Laufzeit, in Abh\"angigkeit von der Anzahl der Vertices im Netz, wodurch es zu Performanceproblemen bei gro{\ss}en Netzen kommen kann.
+
+\subsection{Edge Collapse}
+
+\subsection{Subdivision}
+Beim Arbeiten mit 3D-Modellen kann es n\"otig sein, eine Face in mehrere kleinere Faces zu unterteilen, zum Beispiel um den Detailgrad des Modells zu erh\"ohen oder Zerst\"orung realistischer zu modellieren. Um dies zu erreichen, bietet die \textit{FaceSplittingBehaviour}-Klasse die \textit{SplitFace}-Methode, die eine gegebene Face an einem gegebenen Punkt in drei kleinere Faces Aufteilt. Um dies zu erreichen muss:
+\begin{enumerate}
+	\item Der neue Punkt auf der Face erzeugt werden.
+	\item F\"ur jede HalfEdge der Face:
+	\begin{itemize}
+		\item Eine HalfEdge vom Endpunkt der HalfEdge zum neuen Punkt erzeugt werden.
+		\item Eine HalfEdge vom neuen Punkt zum Startpunkt der HalfEdge erzeugt werden.
+		\item Eine Face (wenn n\"otig) erzeugt werden.
+		\item Die ,,Next''-Referenz der HalfEdge auf die HalfEdge zum neuen Punkt gesetzt werden.
+	\end{itemize}
+	\item F\"ur jede neue HalfEdge der Partner gesetzt werden.
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/splitFace}
+	\caption{Schematische Darstellung des SplitFace Algorithmus. Bild 1 zeigt die Ausgangsposition, Bild 2 zeigt Schritt 2, Bild drei einen Teilschritt von Schritt 3 und Bild 4 zeigt das Ergebnis}
+	\label{fig:splitface}
+\end{figure}
+
+In C\# ergibt sich daraus der folgende Quellcode, welcher durch den \"Ubergabeparameter \textit{isTransaction} f\"ur den Gebrauch im gesamten Mesh optimiert ist.
+\begin{lstlisting}
+public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = false)
+{
+	// --- Schritt 1:
+	Vertex center = _mesh.Vertices.CreateVertex(pointToSplit);
+	_mesh.AddMeshVertex(center.Point);
+
+	// --- Schritt 2:
+	List<HalfEdge> halfEdges = _mesh.Faces.GetFaceCirculator(face);
+	List<HalfEdge> newHalfEdges = new List<HalfEdge>(); 
+	// --- Keeping a reference to all new HalfEdges to pair them later
+
+	// --- Schritt 3:
+	for (int i = 0; i < halfEdges.Count; i++)
+	{
+		HalfEdge halfEdge = halfEdges[i];
+		Face newFace = face;
+		if (i == 0)        // --- reuse old face
+		{
+			newFace.HalfEdge = halfEdge;
+		}
+		else
+		{
+			newFace = _mesh.Faces.CreateFace(halfEdge);
+		}
+
+		HalfEdge newHalfEdgeFromCenter = _mesh.HalfEdges.CreateHalfEdge(center, newFace, halfEdge);
+		HalfEdge newHalfEdgeToCenter = _mesh.HalfEdges.CreateHalfEdge(halfEdge.EndPoint, newFace, newHalfEdgeFromCenter);
+		halfEdge.Next = newHalfEdgeToCenter;
+
+		_mesh.SetMeshTriangles(newFace.Index, _mesh.Faces.GetFaceCirculator(newFace).Select(p => p.OutgoingPoint.Index).ToList(), true);
+		newHalfEdges.AddRange(new List<HalfEdge> { newHalfEdgeFromCenter, newHalfEdgeToCenter, halfEdge });
+	}
+	
+	// --- Schritt 4:
+	_mesh.HalfEdges.CreatePair(newHalfEdges[0], newHalfEdges[4]);
+	_mesh.HalfEdges.CreatePair(newHalfEdges[3], newHalfEdges[7]);
+	_mesh.HalfEdges.CreatePair(newHalfEdges[6], newHalfEdges[1]);
+
+	// --- Optimisation for SplitAllFaces
+	if(isTransaction)
+		_mesh.CommitMeshTriangles();
+}
+\end{lstlisting}
+
