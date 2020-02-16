@@ -106,9 +106,93 @@ In wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{
 Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da alle \"Anderungen lokal an den betroffenen HalfEdges vorgenommen werden k\"onnen und die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden HalfEdges einer Face zur\"uckgibt. Wird im Gegensatz dazu die selbe Operation nur mithilfe vom UnityMesh versucht, so m\"usste mittels Brute-Force zuerst jeder Index der Eckpunkte der gesuchten Kante ermittelt werden, da diese nicht explizit dargestellt wird, um anschlie{\ss}end in den Indices die Dreiecke zu finden, die diese Eckpunkte verwenden, damit diese durch die neu bestimmten Dreiecke ersetzt werden k\"onnen. Daraus resultiert einen Laufzeit, in Abh\"angigkeit von der Anzahl der Vertices im Netz, wodurch es zu Performanceproblemen bei gro{\ss}en Netzen kommen kann.
 
 \subsection{Edge Collapse}
+Der Edge-Collapse ist eine Operation, die dazu dient, die Komplexit\"at eines Models zu reduzieren. Dabei werden zwei Punkte zusammengef\"uhrt, indem eine Kante zusammenf\"allt, wodurch bei einer Operation zwei Dreiecksfl\"achen entfernt werden, ohne die gesamte Struktur zu ver\"andern \cite{Castello07}. In diesem Ansatz kann bestimmt werden, zu welchem Punkt die Kante zusammenf\"allt, je nachdem, welche der beiden HalfEdges als Ursprung gew\"ahlt wird, da daf\"ur der Endpunkt der HalfEdge verwendet wird. 
+Um einen Edge-Collapse durchzuf\"uhren, m\"ussen die Schritte aus Abbildung \ref{fig:edgecollapse} befolgt werden:
+\begin{enumerate}
+	\item Bestimme die an der HalfEdge anliegenden Vertices, HalfEdges und Faces.
+	\item Setze die Referenzen der Nachbarschaftsbeziehung neu, die Nachbarn der HalfEdges die an der selben HalfEdge liegen und nicht teil der kollabierenden Kante sind werden Nachbarn.
+	\item Entferne die betroffene Faces und HalfEdges.
+	\item Setze alle Referenzen von einem Vertex auf den andern, entferne den Unbenutzten.
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/EdgeCollapse}
+	\caption{Schematische Darstellung des Edge-Collapses. Bild 1 zeigt die Ausgangssituation, Bild 2 stellt die neuen Nachbarschaftsreferenzen dar, in Bild 3 wurden die Faces entfernt und in Bild 4 ist das Ergebnis zu sehen.}
+	\label{fig:edgecollapse}
+\end{figure}
+Die Implementierung des beschriebenen Algorithmus sieht folgenderma{\ss}en aus:
+\begin{lstlisting}
+public void EdgeCollapse(HalfEdge halfEdge)
+{
+	// --- the point the halfEdge is collapsing to
+	Vertex collapsingPoint = halfEdge.EndPoint;
+	Vertex pointToRemove = halfEdge.OutgoingPoint;
+
+	// --- determine the halfEdges to remove
+	// --- those are the HalfEdges around the halfEdge Face 
+	// --- and it's pairs face
+	HalfEdge pair = halfEdge.Opposing;
+
+	List<HalfEdeg> halfEdgesToRemove =
+	_mesh.Faces.GetFaceCirculator(halfEdge.Face);
+	halfEdgesToRemove
+	.AddRange(_mesh.Faces.GetFaceCirculator(pair.Face));
+
+	// --- set the neighbours right
+	foreach(HalfEdge he in halfEdgesToRemove)
+	{
+		if (he.Index == halfEdge.Index 
+		|| he.Index == pair.Index 
+		|| he.Next.Index == halfEdge.Index 
+		|| he.Next.Index == pair.Index
+		|| he.Opposing == null 
+		|| he.Next.Opposing == null)
+			continue;
+
+		_mesh.HalfEdges.CreatePair(he.Opposing, he.Next.Opposing);
+	}
+
+	_mesh.Faces.RemoveFace(halfEdge.Face);
+	_mesh.Faces.RemoveFace(pair.Face);
+
+	foreach (HalfEdge he 
+	in _mesh.Vertices.GetVertexCirculator(pointToRemove))
+	{
+		if(he.OutgoingPoint.Index == pointToRemove.Index)
+		{
+			he.OutgoingPoint = collapsingPoint;
+		}
+	}
+
+	_mesh.Vertices.RemoveVertex(pointToRemove);
+	_mesh.GenerateUnityMesh();
+}
+\end{lstlisting}
+Die Methode \textit{RemoveFace} ist eine Methode aus der \textit{FaceList} und regelt auch das L\"oschen von allen weiteren Referenzen:
+\begin{lstlisting}
+public void RemoveFace(Face f)
+{
+	List<HalfEdge> halfEdges = GetFaceCirculator(f);
+	foreach (var halfEdge in halfEdges)
+	{
+		if (halfEdge.Opposing != null)
+		halfEdge.Opposing.Opposing = null;
+
+		if(_mesh.Vertices.GetVertexCirculator(halfEdge.OutgoingPoint)
+		.Count <= 0)
+		{
+			_mesh.Vertices.RemoveVertex(halfEdge.OutgoingPoint);
+		}
+	}
+	_mesh.HalfEdges.RemoveAll(p => halfEdges.Contains(p));
+
+	_faces.Remove(f);
+}
+\end{lstlisting}
+
 
 \subsection{Subdivision}
-Beim Arbeiten mit 3D-Modellen kann es n\"otig sein, eine Face in mehrere kleinere Faces zu unterteilen, zum Beispiel um den Detailgrad des Modells zu erh\"ohen oder Zerst\"orung realistischer zu modellieren. Um dies zu erreichen, bietet die \textit{FaceSplittingBehaviour}-Klasse die \textit{SplitFace}-Methode, die eine gegebene Face an einem gegebenen Punkt in drei kleinere Faces Aufteilt. Um dies zu erreichen muss:
+Im Gegensatz zum Edge-Collapse kann es beim Arbeiten mit 3D-Modellen auch n\"otig sein, eine Face in mehrere kleinere Faces zu unterteilen, um den Detailgrad des Modells zu erh\"ohen oder Zerst\"orung realistischer zu modellieren. Um dies zu erreichen, bietet die \textit{FaceSplittingBehaviour}-Klasse die \textit{SplitFace}-Methode, die eine gegebene Face an einem gegebenen Punkt in drei kleinere Faces Aufteilt. Um dies zu erreichen muss:
 \begin{enumerate}
 	\item Der neue Punkt auf der Face erzeugt werden.
 	\item F\"ur jede HalfEdge der Face:
