@@ -238,12 +238,19 @@ public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = fals
 			newFace = _mesh.Faces.CreateFace(halfEdge);
 		}
 
-		HalfEdge newHalfEdgeFromCenter = _mesh.HalfEdges.CreateHalfEdge(center, newFace, halfEdge);
-		HalfEdge newHalfEdgeToCenter = _mesh.HalfEdges.CreateHalfEdge(halfEdge.EndPoint, newFace, newHalfEdgeFromCenter);
+		HalfEdge newHalfEdgeFromCenter =
+		_mesh.HalfEdges.CreateHalfEdge(center, newFace, halfEdge);
+		HalfEdge newHalfEdgeToCenter =
+		_mesh.HalfEdges.CreateHalfEdge(halfEdge.EndPoint, 
+		newFace, newHalfEdgeFromCenter);
 		halfEdge.Next = newHalfEdgeToCenter;
 
-		_mesh.SetMeshTriangles(newFace.Index, _mesh.Faces.GetFaceCirculator(newFace).Select(p => p.OutgoingPoint.Index).ToList(), true);
-		newHalfEdges.AddRange(new List<HalfEdge> { newHalfEdgeFromCenter, newHalfEdgeToCenter, halfEdge });
+		_mesh.SetMeshTriangles(newFace.Index,
+		_mesh.Faces.GetFaceCirculator(newFace)
+		.Select(p => p.OutgoingPoint.Index)
+		.ToList(), true);
+		newHalfEdges.AddRange(new List<HalfEdge>
+		{ newHalfEdgeFromCenter, newHalfEdgeToCenter, halfEdge });
 	}
 	
 	// --- Schritt 4:
@@ -257,3 +264,104 @@ public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = fals
 }
 \end{lstlisting}
 
+\subsection {2D-Zerst\"orungssimulation}
+Mit Hilfe der Subdivision und dem Edgesplit kann eine einfache, dynamische Zerst\"orungs\-simulation f\"ur zweidimensionale Oberfl\"achen erstellt werden, welche zum Beispiel im Kontext eines Videospiels eine interaktive Welt bietet. 
+
+Die Simulation basiert auf einem Punkt des Meshs, der das Zentrum der Zerst\"orung darstellt, vergleichbar mit dem Aufschlagpunkt eines Hammers. Um diesen Punkt herum werden zuf\"allig weitere Punkte platziert, je nach Material der getroffenen Face unterschiedlich viele, in gr\"o{\ss}er werden Abst\"anden. Von der direkt getroffenen Face wird jede HalfEdge gesplittet, um so gro{\ss}e Splitter, die sich durch das Material ziehen zu simulieren, da auch die gegen\"uberliegenden HalfEdges geteilt werden. Die verteilten Punkte werden Anschlie{\ss}end als neuer Punkt f\"ur die Subdivision verwendet, um so den Bruch konzentrisch vom Epizentrum ausgehen zu lassen. Zu guter Letzt werden die neuen Faces aus dem Mesh ausgetrennt und in ein eigenes Mesh umgewandelt, die einzelnen Bruchst\"ucke bewegen zu k\"onnen.
+
+In Unity ist es wie unten programmiert:
+\begin{lstlisting}
+public void SimulateBreaking(Vector3 impactPoint)
+{
+
+	if (Faces.TryGetFaceContainingPoint(impactPoint, 
+	out Face impactedFace))
+	{
+		var bbd = new BreakingBehaviourDeterminer();
+
+		List<Vector3> breakpoints = bbd.GetBreakingPoints(impactedFace,
+		 impactPoint);
+		 
+		List<HalfEdge> halfEdges =
+		Faces.GetFaceCirculator(impactedFace).ToList();
+		_faceSplittingBehaviour.SplitFace(impactedFace, impactPoint);
+
+		// --- Aufteilen der Urspruenglichen HalfEdges
+		foreach (HalfEdge oldHe in halfEdges)
+		{
+			_edgeSplittingBehaviour.SplitHalfEdge(oldHe,
+			VectorMath.GetIntermediateVector(
+			oldHe.OutgoingPoint.Point, oldHe.EndPoint.Point));
+		}
+
+		// --- Platzieren der neuen Punkte, splitten der Faces
+		foreach (Vector3 point in breakpoints)
+		{
+			if (Faces.TryGetFaceContainingPoint(point, out Face face))
+			{
+				List<HalfEdge> oldHalfEdgesOfFace = 
+				Faces.GetFaceCirculator(face).Select(p => p.Next);
+				_faceSplittingBehaviour.SplitFace(face, point);
+			}
+		}
+	
+		// --- Liste aller erzeugten Faces
+		List<Face> faces = _edgeSplittingBehaviour.GetCreatedFaces();
+		faces.AddRange(_faceSplittingBehaviour.GetCreatedFaces());
+	
+		// --- Herausloesen der Faces
+		foreach (Face face in faces)
+		{
+			// --- Unity GameObject
+			GameObject go = new GameObject("Shard");
+	
+			HalfEdgeMesh mesh = go.AddComponent<HalfEdgeMesh>();
+			go.AddComponent<Rigidbody>().useGravity = true;
+	
+	
+			List<HalfEdge> createdHalfEdges = 
+			Faces.GetFaceCirculator(face).ToList();
+			List<Vertex> vertices = createdHalfEdges
+			.Select(p => p.OutgoingPoint).ToList();
+	
+			mesh.CreateMesh(vertices[0].Point, 
+			vertices[1].Point, vertices[2].Point);
+			Faces.RemoveFace(face);
+		}
+		
+		// --- entfernen der Erzeugten Faces
+		_edgeSplittingBehaviour.ClearCreatedFaces();
+		_faceSplittingBehaviour.ClearCreatedFaces();
+	}
+}
+\end{lstlisting}
+Bei der Bestimmung der Bruchpunkte wird der \textit{BreakingBehaviourDeterminer} verwendet, welcher zuf\"allige Punkte in gr\"o{\ss}er werdenden Kreisen platziert, relativ zu dem Gew\"ahlten Punkt. Die Methode \textit{GetMaterialBreakingBehaviour} gibt eine Liste mit Integern zur\"uck, die die Anzahl an Punkten in jedem Kreis f\"ur ein Material vordefiniert.
+
+Der Code der \textit{GetBreakingPoints}-Methode sieht wie Folgt aus:
+\begin{lstlisting}
+public List<Vector3> GetBreakingPoints(Face face, Vector3 impactPoint)
+{
+	var result = new List<Vector3>();
+	
+	Vertex v1 = face.HalfEdge.OutgoingPoint.Point;
+	Vertex v2 = face.HalfEdge.Next.OutgoingPoint.Point;
+	Vertex v3 = face.HalfEdge.Next.Next.OutgoingPoint.Point;
+	
+	List<int> materialBehaviour =
+	GetMaterialBreakingBehaviour(face.materialType);
+	
+	for (int i = 0; i < materialBehaviour.Count; i++)
+	{
+		for (int j = 0; j < materialBehaviour[i]; j++)
+		{
+			Vector3 newPoint = UnityEngine.Random.insideUnitCircle *
+			(i + .5f) + new Vector2(impactPoint.x, impactPoint.z);
+			Vector3 addPoint = new Vector3(newPoint.x,
+			impactPoint.y, newPoint.y);
+			result.Add(addPoint);
+		}
+	}
+	return result;
+}
+
+\end{lstlisting}

@@ -2,7 +2,8 @@
 Um die Werte aus Tabelle \ref{Table:Comp} zu erhalten, m\"ussen folgende Annahmen getroffen werden: Bei der Speichernutzung wird ein allgemeines Mesh mit $n_v$ Vertices und $n_t$ Triangles betrachtet. Allgemein kann angenommen werden, dass ein Mesh ungef\"ahr doppelt so viele Eckpunkte wie Dreiecke hat, woraus sich $n_t \approx 2 * n_v$ ergibt. Zudem kann die Annahme get\"atigt werden, dass in C\# ein \textit{Vector3}, der aus drei \textit{floats} besteht eine Gr\"o{\ss}e von $3 * 32 Bit = 12 Byte$ hat, ein \textit{int} $4 Byte$ gro{\ss} ist und eine Referenz auf ein Objekt bei einer 64 Bit-Architektur $8 Byte$ ben\"otigt.
 \subsection{Indexed Mesh}
 $
-n_v \times 12 Byte \mbox{(Vector3)} + 3 \times n_t \times 4 Byte \mbox{(Pro Dreieck gibt es 3 int Indices)}
+n_v \times 12 Byte \mbox{(Vector3)} + 3 \times n_t \times 4 Byte 
+\mbox{(Pro Dreieck gibt es 3 int Indices)}
 \\\approx n_v \times 12 Byte + 6 n_v \times 4 Byte 
 \\\approx \underline{36 \times n_v Byte}
 $

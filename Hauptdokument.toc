@@ -19,8 +19,9 @@
 \contentsline {subsection}{\numberline {3.1}Split Half-Edge}{14}% 
 \contentsline {subsection}{\numberline {3.2}Edge Collapse}{17}% 
 \contentsline {subsection}{\numberline {3.3}Subdivision}{19}% 
-\contentsline {section}{\numberline {4}Rechnungen}{21}% 
-\contentsline {subsection}{\numberline {4.1}Indexed Mesh}{21}% 
-\contentsline {subsection}{\numberline {4.2}Triangle-Neighbor Structure}{21}% 
-\contentsline {subsection}{\numberline {4.3}Winged-Edge Mesh}{21}% 
-\contentsline {subsection}{\numberline {4.4}Half-Edge Mesh}{21}% 
+\contentsline {subsection}{\numberline {3.4}2D-Zerst\"orungssimulation}{21}% 
+\contentsline {section}{\numberline {4}Rechnungen}{23}% 
+\contentsline {subsection}{\numberline {4.1}Indexed Mesh}{23}% 
+\contentsline {subsection}{\numberline {4.2}Triangle-Neighbor Structure}{23}% 
+\contentsline {subsection}{\numberline {4.3}Winged-Edge Mesh}{24}% 
+\contentsline {subsection}{\numberline {4.4}Half-Edge Mesh}{24}% 

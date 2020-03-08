@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  9 FEB 2020 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  26 FEB 2020 19:13
 entering extended mode
 **./Hauptdokument.tex
 (Hauptdokument.tex
@@ -667,7 +667,7 @@ LaTeX Warning: Citation `Shirley2010' on page 5 undefined on input line 80.
 
 LaTeX Warning: Citation `Shirley2010' on page 6 undefined on input line 99.
 
-) (2_Grundlagen/Mesh.tex [6]) (3_HalfEdgeMesh/Implementierung.tex
+[6]) (2_Grundlagen/Mesh.tex) (3_HalfEdgeMesh/Implementierung.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
 
 ("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
@@ -747,36 +747,26 @@ Overfull \hbox (90.61465pt too wide) in paragraph at lines 216--217
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[19 <./Images/splitFace.png>]
-Overfull \hbox (176.02554pt too wide) in paragraph at lines 241--242
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
+[19 <./Images/splitFace.png>] [20]
+Overfull \hbox (0.8032pt too wide) in paragraph at lines 268--269
+\OT1/cmr/m/n/12 Mit Hil-fe der Sub-di-vi-si-on und dem Ed-ge-split kann ei-ne e
+in-fa-che, dy-na-mi-sche Zerst[]orungs-
  []
 
-
-Overfull \hbox (320.56705pt too wide) in paragraph at lines 242--243
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+[21]
+Overfull \hbox (11.77383pt too wide) in paragraph at lines 342--343
+[][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (419.11807pt too wide) in paragraph at lines 245--246
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][] 
- []
-
-
-Overfull \hbox (228.58609pt too wide) in paragraph at lines 246--247
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-) (2_Grundlagen/Datenstrukturen.tex [20]
-Overfull \hbox (27.80627pt too wide) in paragraph at lines 11--17
+[22]) (2_Grundlagen/Datenstrukturen.tex
+Overfull \hbox (27.80627pt too wide) in paragraph at lines 12--18
 $\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (3 \OMS/cmsy/m/n/12  
 \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 + 3 \OMS/cmsy/m/n/12 
  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) +
  []
 
-
-Overfull \hbox (98.0135pt too wide) in paragraph at lines 19--25
+[23]
+Overfull \hbox (98.0135pt too wide) in paragraph at lines 20--26
 $\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (8\OML/cmm/m/it/12 By
 te[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/
 it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/
@@ -784,14 +774,14 @@ m/n/12 +
  []
 
 
-Overfull \hbox (69.36266pt too wide) in paragraph at lines 19--25
+Overfull \hbox (69.36266pt too wide) in paragraph at lines 20--26
 \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 n[][] \OMS
 /cmsy/m/n/12  \OT1/cmr/m/n/12 (4 \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/
 m/it/12 Byte[] \OT1/cmr/m/n/12 +
  []
 
 )
-Overfull \hbox (98.0135pt too wide) in paragraph at lines 27--79
+Overfull \hbox (98.0135pt too wide) in paragraph at lines 28--79
 $\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (8\OML/cmm/m/it/12 By
 te[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/
 it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/
@@ -799,7 +789,7 @@ m/n/12 +
  []
 
 
-Overfull \hbox (221.3583pt too wide) in paragraph at lines 27--79
+Overfull \hbox (221.3583pt too wide) in paragraph at lines 28--79
 \OT1/cmr/m/n/12 3 \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 n[]\OT1/cmr/m/n/12 (4 \OM
 S/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 )[] 
  []
@@ -931,7 +921,7 @@ mm/m/it/12 :\OT1/cmr/m/n/12 12\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2019]\OML/cmm/m
 mr/m/n/12 12\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2019]\OML/cmm/m/it/12 :[]$ 
  []
 
-[21]) [22] [23 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
+) [24] [25 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -940,10 +930,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10143 strings out of 492895
- 163724 string characters out of 3122801
+ 10183 strings out of 492895
+ 164379 string characters out of 3122801
  572894 words of memory out of 3000000
- 13857 multiletter control sequences out of 15000+200000
+ 13897 multiletter control sequences out of 15000+200000
  13354 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,11n,54p,9094b,1758s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -962,9 +952,9 @@ Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users
 /Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (23 pages, 668475 bytes).
+Output written on Hauptdokument.pdf (25 pages, 678332 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
+ 146 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
