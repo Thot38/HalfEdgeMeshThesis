@@ -1,0 +1,69 @@
+\section{Vergleich zwischen Half-Edge Mesh und UnityMesh}
+Nachdem die Funktionsweise der wichtigsten Operationen f\"ur ein Half-Edge Mesh im vorherigen Kapitel beschrieben wurden, werden diese im Folgenden mit vergleichbaren Operationen eines UnityMeshs verglichen.
+
+Bei den Methoden \textit{SplitHalfEdge}, \textit{EdgeCollapse} und \textit{SplitFace} handelt es sich um Operationen auf dem Mesh, die lokale \"Anderungen verursachen. Da es einen direkten Zugriff auf die betroffenen Stellen gibt, mithilfe der Face- und Half-Edge-Listen muss nicht das gesamte Mesh nach den betroffenen stellen abgesucht werden. Zudem kann mittels der \textit{GetFaceCirculator}-Methode auf alle betroffenen Half-Edges in konstanter Zeit zugegriffen werden, da diese Methode immer die drei Half-Edges \"uber die Referenz der Face bestimmen kann. Insgesamt haben die \textit{SplitHalfEdge}- und \textit{SplitFace}-Methode also eine konstante Zeitkomplexit\"at, unabh\"angig von der gr\"o{\ss}e des Meshs.
+Um allerdings das gleiche Resultat mit einem UnityMesh zu erhalten, muss zuerst mittels Brute-Force jeder Index der Eckpunkte der gesuchten Kante oder Face ermittelt werden, da diese nicht explizit dargestellt werden. Diese Suche nach allen Kanten mit den selben Eckpunkten k\"onnte wie folgt aussehen:
+\begin{lstlisting}
+List<int> findEdges(int a, int b)
+{
+	// --- All triangle indices
+	int[] tris = _mesh.triangles;
+	
+	// --- The result contains every starting index of a matching triangle
+	List<int> result = new List<int>();
+	
+	// --- for each pair of three
+	for(int i = 0; i < tris.Length; i+=3)
+	{
+		int matches = 0; // --- count the matching indices
+		if(tris[i] == a || tris[i] == b)
+			matches++;
+		if(tris[i+1] == a || tris[i+1] == b)
+			matches++;
+		if(tris[i+2] == a || tris[i+2] == b)
+			matches++;
+			
+		// --- if there are two, consider this triangle index
+		if(matches == 2) 
+			result.Add(i);
+	}
+	return result;
+}
+\end{lstlisting}
+Dieser beispielhafte Implementierungsvorschlag kann benutzt werden, um die betroffenen Faces f\"ur einen EdgeSplit zu finden, um die entsprechende Stelle f\"ur eine Subdivision zu finden, muss der dritte betroffene Punkt mitgegeben werden. Auff\"allig bei dieser Implementierung ist, dass es, im Gegensatz zum Half-Edge-Mesh abh\"angig von der gr\"o{\ss}e des Meshs ist, wodurch es bei dieser Implementierung mit gro{\ss}en Netzen zu Laufzeitproblemen kommen kann.
+
+Auch die \textit{EdgeCollapse}-Methode verwendet die \textit{GetFaceCirculator}-Methode mit konstanter Laufzeit. Zus\"atzlich wird die \textit{GetVertexCirculator}-Methode verwendet, um die Half-Edges an den betroffenen Vertices zu finden. Theoretisch besitzt diese Methode eine konstante Laufzeit in Abh\"angigkeit von der Anzahl der Half-Edges, die den gefragten Vertex verwenden. Im Plankton-Mesh \cite{meshMash} wird folgende Implementierung verwendet:
+\begin{lstlisting}
+public IEnumerable<int> GetVertexCirculator(int halfedgeIndex)
+{
+	if (halfedgeIndex < 0 || halfedgeIndex > this.Count) { yield break; }
+	int h = halfedgeIndex;
+	int count = 0;
+	do
+	{
+		yield return h;
+		h = this[this.GetPairHalfedge(h)].NextHalfedge;
+		if (h < 0) { throw new InvalidOperationException
+		("Unset index, cannot continue."); }
+		if (count++ > 999) { throw new InvalidOperationException
+		("Runaway vertex circulator"); }
+	}
+	while (h != halfedgeIndex);
+}
+\end{lstlisting}
+Allerdings funktioniert dieser Ansatz nur auf der zugrunde liegenden Annahme, dass das abgebildete Mesh vollst\"andig ist, es also keine Half-Edge gibt, die keinen Nachbarn hat. Aus diesem Grund wird eine andere Implementierung verwendet, da diese Eigenschaft f\"ur ein solches Netz nicht gegeben sein muss. Diese sieht wie folgt aus: 
+\begin{lstlisting}
+public List<HalfEdge> GetVertexCirculator(Vertex v)
+{
+	return _mesh.HalfEdges
+	.Where(p => p.OutgoingPoint.Index == v.Index).ToList();
+}
+\end{lstlisting}
+Durch diese Generalisierung wird allerdings die konstante Laufzeit durch eine Lineare ersetzt, wodurch die Laufzeiten des Half-Edge-Meshs und des UnityMeshs jeweils in lineare Abh\"angigkeit von der gr\"o{\ss}e des Netzes stehen. Allerdings kann, wie das Plankton-Mesh zeigt, die \textit{GetVertexCirculator}-Methode noch weiter optimiert werden. 
+
+Alles in allem kann gesagt werden, dass ein Half-Edge-Mesh mit konstanten Laufzeiten f\"ur die wichtigsten Operationen besser geeignet ist f\"ur Echtzeitsimulationen mit dynamischen Meshs, die sich zur Laufzeit ver\"andern. Auch eignet sich ein Half-Edge-Mesh zur Bearbeitung eines Meshs, um den Detailgrad mithilfe der Subdivision zu erh\"ohen oder durch EdgeCollapse zu reduzieren. Allerdings kommen diese M\"oglichkeiten mit dem Nachteil, dass die Grundstruktur des Half-Edge-Mesh allein mehr als sechs mal so gro{\ss} ist, wie ein Indexed Mesh der selben Anzahl an Vertices. F\"ur statische Meshs eignet sich daher eher das UnityMesh und allgemein muss auf den einzelnen Anwendungsfall geachtet werden, um zu entscheiden, ob ein Half-Edge-Mesh oder ein Indexed Mesh verwendet werden soll.
+
+\section{Ausblick}
+Im Anschluss an diese Arbeit gibt es noch einige Sachen, um die diese Implementierung eines Half-Edge-Mesh erweitert werden kann. Zum einen muss die \textit{GetVertexCirculator}-Methode optimiert werden, damit der EdgeCollapse auch in Echtzeit verwendet werden kann. 
+
+Des Weiteren ist ein Ziel, die 2D-Zerst\"orungssimulation zu erweitern, um diese in dreidimensionalen Simulationen verwenden zu k\"onnen.

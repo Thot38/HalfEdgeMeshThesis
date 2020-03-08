@@ -20,8 +20,9 @@
 \contentsline {subsection}{\numberline {3.2}Edge Collapse}{17}% 
 \contentsline {subsection}{\numberline {3.3}Subdivision}{19}% 
 \contentsline {subsection}{\numberline {3.4}2D-Zerst\"orungssimulation}{21}% 
-\contentsline {section}{\numberline {4}Rechnungen}{23}% 
-\contentsline {subsection}{\numberline {4.1}Indexed Mesh}{23}% 
-\contentsline {subsection}{\numberline {4.2}Triangle-Neighbor Structure}{23}% 
-\contentsline {subsection}{\numberline {4.3}Winged-Edge Mesh}{24}% 
-\contentsline {subsection}{\numberline {4.4}Half-Edge Mesh}{24}% 
+\contentsline {section}{\numberline {4}Vergleich zwischen Half-Edge Mesh und UnityMesh}{23}% 
+\contentsline {section}{\numberline {5}Rechnungen}{25}% 
+\contentsline {subsection}{\numberline {5.1}Indexed Mesh}{25}% 
+\contentsline {subsection}{\numberline {5.2}Triangle-Neighbor Structure}{25}% 
+\contentsline {subsection}{\numberline {5.3}Winged-Edge Mesh}{26}% 
+\contentsline {subsection}{\numberline {5.4}Half-Edge Mesh}{26}% 
