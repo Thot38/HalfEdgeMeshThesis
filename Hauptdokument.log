@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  8 MAR 2020 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.24)  29 MAR 2020 17:35
 entering extended mode
 **./Hauptdokument.tex
 (Hauptdokument.tex
@@ -680,12 +680,15 @@ File: Images/half-edge-mesh.png Graphic file (type png)
 <use Images/half-edge-mesh.png>
 Package pdftex.def Info: Images/half-edge-mesh.png  used on input line 11.
 (pdftex.def)             Requested size: 313.69029pt x 187.40547pt.
-[7 <./Images/half-edge-mesh.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7]
 Overfull \hbox (37.5807pt too wide) in paragraph at lines 24--50
  [][] 
  []
 
-[8]
+[8 <./Images/half-edge-mesh.png>]
 Overfull \hbox (18.3439pt too wide) in paragraph at lines 71--72
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -708,71 +711,91 @@ Overfull \hbox (24.91397pt too wide) in paragraph at lines 136--137
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[11] [12]) (4_Operationen.tex [13]
+[11] [12] [13]) (4_Operationen.tex
 <Images/splitHalfEdge.png, id=61, 3411.74625pt x 353.32pt>
 File: Images/splitHalfEdge.png Graphic file (type png)
 <use Images/splitHalfEdge.png>
 Package pdftex.def Info: Images/splitHalfEdge.png  used on input line 28.
 (pdftex.def)             Requested size: 448.13095pt x 46.40764pt.
- [14 <./Images/splitHalfEdge.png>] [15]
+ [14] [15 <./Images/splitHalfEdge.png>]
 <Images/meshmash.png, id=69, 1445.4pt x 275.22826pt>
 File: Images/meshmash.png Graphic file (type png)
 <use Images/meshmash.png>
 Package pdftex.def Info: Images/meshmash.png  used on input line 101.
 (pdftex.def)             Requested size: 448.13095pt x 85.33247pt.
 
-
-LaTeX Warning: Citation `Castello07' on page 16 undefined on input line 109.
-
 [16 <./Images/meshmash.png>]
+
+LaTeX Warning: Citation `Castello07' on page 17 undefined on input line 109.
+
 <Images/EdgeCollapse.png, id=74, 2701.09125pt x 607.26875pt>
 File: Images/EdgeCollapse.png Graphic file (type png)
 <use Images/EdgeCollapse.png>
 Package pdftex.def Info: Images/EdgeCollapse.png  used on input line 119.
 (pdftex.def)             Requested size: 448.13095pt x 100.75099pt.
- [17 <./Images/EdgeCollapse.png>] [18]
-<Images/splitFace.png, id=82, 1909.1325pt x 342.27875pt>
+[17 <./Images/EdgeCollapse.png>] [18]
+<Images/EdgeCollapseDemo.png, id=82, 933.4875pt x 244.5135pt>
+File: Images/EdgeCollapseDemo.png Graphic file (type png)
+<use Images/EdgeCollapseDemo.png>
+Package pdftex.def Info: Images/EdgeCollapseDemo.png  used on input line 194.
+(pdftex.def)             Requested size: 403.31511pt x 105.64243pt.
+ [19 <./Images/EdgeCollapseDemo.png>]
+<Images/splitFace.png, id=88, 1909.1325pt x 342.27875pt>
 File: Images/splitFace.png Graphic file (type png)
 <use Images/splitFace.png>
-Package pdftex.def Info: Images/splitFace.png  used on input line 209.
+Package pdftex.def Info: Images/splitFace.png  used on input line 215.
 (pdftex.def)             Requested size: 448.13095pt x 80.34149pt.
 
-Overfull \hbox (3.71011pt too wide) in paragraph at lines 214--215
+Overfull \hbox (3.71011pt too wide) in paragraph at lines 220--221
 []\OT1/cmr/m/n/12 In C# er-gibt sich dar-aus der fol-gen-de Quell-co-de, wel-ch
 er durch den []Ubergabeparameter
  []
 
 
-Overfull \hbox (90.61465pt too wide) in paragraph at lines 216--217
+Overfull \hbox (90.61465pt too wide) in paragraph at lines 222--223
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[19 <./Images/splitFace.png>] [20]
-Overfull \hbox (0.8032pt too wide) in paragraph at lines 268--269
+[20 <./Images/splitFace.png>]
+<Images/SubdivisionDemo.png, id=93, 901.56825pt x 238.491pt>
+File: Images/SubdivisionDemo.png Graphic file (type png)
+<use Images/SubdivisionDemo.png>
+Package pdftex.def Info: Images/SubdivisionDemo.png  used on input line 274.
+(pdftex.def)             Requested size: 403.31511pt x 106.68675pt.
+
+Overfull \hbox (0.8032pt too wide) in paragraph at lines 281--282
 \OT1/cmr/m/n/12 Mit Hil-fe der Sub-di-vi-si-on und dem Ed-ge-split kann ei-ne e
 in-fa-che, dy-na-mi-sche Zerst[]orungs-
  []
 
-[21]
-Overfull \hbox (11.77383pt too wide) in paragraph at lines 342--343
+[21 <./Images/SubdivisionDemo.png>] [22]
+Overfull \hbox (11.77383pt too wide) in paragraph at lines 355--356
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[22]) (5_Vergleich.tex [23]
+[23]
+<Images/DestructionExample.png, id=104, 719.68875pt x 223.43475pt>
+File: Images/DestructionExample.png Graphic file (type png)
+<use Images/DestructionExample.png>
+Package pdftex.def Info: Images/DestructionExample.png  used on input line 383.
+
+(pdftex.def)             Requested size: 403.31511pt x 125.21806pt.
+) (5_Vergleich.tex
 Overfull \hbox (24.91397pt too wide) in paragraph at lines 12--13
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
+[24 <./Images/DestructionExample.png>]
 
-LaTeX Warning: Citation `meshMash' on page 24 undefined on input line 35.
+LaTeX Warning: Citation `meshMash' on page 25 undefined on input line 35.
 
 
 Overfull \hbox (18.3439pt too wide) in paragraph at lines 39--40
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[24]) (2_Grundlagen/Datenstrukturen.tex
+[25]) [26] (2_Grundlagen/Datenstrukturen.tex
 Overfull \hbox (27.80627pt too wide) in paragraph at lines 12--18
 $\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (3 \OMS/cmsy/m/n/12  
 \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 + 3 \OMS/cmsy/m/n/12 
@@ -794,7 +817,7 @@ Overfull \hbox (69.36266pt too wide) in paragraph at lines 20--26
 m/it/12 Byte[] \OT1/cmr/m/n/12 +
  []
 
-[25])
+)
 Overfull \hbox (98.0135pt too wide) in paragraph at lines 28--80
 $\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (8\OML/cmm/m/it/12 By
 te[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/
@@ -935,7 +958,7 @@ mm/m/it/12 :\OT1/cmr/m/n/12 12\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2019]\OML/cmm/m
 mr/m/n/12 12\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2019]\OML/cmm/m/it/12 :[]$ 
  []
 
-) [26] [27 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
+[27]) [28] [29 <./Images/ClassDiagramHalfEdgeMesh.png>] (Hauptdokument.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -944,10 +967,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10199 strings out of 492895
- 164659 string characters out of 3122801
- 572894 words of memory out of 3000000
- 13910 multiletter control sequences out of 15000+200000
+ 10217 strings out of 492895
+ 165172 string characters out of 3122801
+ 569894 words of memory out of 3000000
+ 13925 multiletter control sequences out of 15000+200000
  13354 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,11n,54p,9094b,1758s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -966,9 +989,9 @@ Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users
 /Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti12.pfb>
-Output written on Hauptdokument.pdf (27 pages, 687720 bytes).
+Output written on Hauptdokument.pdf (29 pages, 921312 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
+ 164 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

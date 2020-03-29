@@ -64,6 +64,12 @@ Durch diese Generalisierung wird allerdings die konstante Laufzeit durch eine Li
 Alles in allem kann gesagt werden, dass ein Half-Edge-Mesh mit konstanten Laufzeiten f\"ur die wichtigsten Operationen besser geeignet ist f\"ur Echtzeitsimulationen mit dynamischen Meshs, die sich zur Laufzeit ver\"andern. Auch eignet sich ein Half-Edge-Mesh zur Bearbeitung eines Meshs, um den Detailgrad mithilfe der Subdivision zu erh\"ohen oder durch EdgeCollapse zu reduzieren. Allerdings kommen diese M\"oglichkeiten mit dem Nachteil, dass die Grundstruktur des Half-Edge-Mesh allein mehr als sechs mal so gro{\ss} ist, wie ein Indexed Mesh der selben Anzahl an Vertices. F\"ur statische Meshs eignet sich daher eher das UnityMesh und allgemein muss auf den einzelnen Anwendungsfall geachtet werden, um zu entscheiden, ob ein Half-Edge-Mesh oder ein Indexed Mesh verwendet werden soll.
 
 \section{Ausblick}
-Im Anschluss an diese Arbeit gibt es noch einige Sachen, um die diese Implementierung eines Half-Edge-Mesh erweitert werden kann. Zum einen muss die \textit{GetVertexCirculator}-Methode optimiert werden, damit der EdgeCollapse auch in Echtzeit verwendet werden kann. 
+Im Anschluss an diese Arbeit gibt es noch einige Features, um die diese Implementierung eines Half-Edge-Mesh erweitert werden kann. Zum Einen muss die \textit{GetVertexCirculator}-Methode optimiert werden, um eine konstante Zeitkomplexit\"at bei allen Grundoperationen zu erhalten, damit es in Echtzeitanwendungen verwendet werden kann. 
 
-Des Weiteren ist ein Ziel, die 2D-Zerst\"orungssimulation zu erweitern, um diese in dreidimensionalen Simulationen verwenden zu k\"onnen.
+Des Weiteren ist ein Ziel, die 2D-Zerst\"orungssimulation zu erweitern, um diese in dreidimensionalen Simulationen verwenden zu k\"onnen. Dies kann geschehen, indem die Bruchpunkte nicht nur, wie bei der 2D-Simulation, auf der Oberfl\"ache, sondern auch innerhalb des Modells verteilt werden. Die erzeugten ,,Scherben'' werden um einen vierten Punkt erweitert, wodurch diese ein Tetraeder bilden und zu einem dreidimensionalen Splitter werden. 
+
+In diesem Zuge sollte die Simulation auch die Kraft (force), die auf das Modell wirkt, betrachtet werden, um in unterschiedlichen Situationen realistischere Resultate zu erzielen.
+
+Sollte der gew\"ahlte Ansatz nicht die gew\"unschten Effekte erzielen, kann eine andere Methode verwendet werden, um die Brucheffekte zu berechnen, zum Beispiel mithilfe von Voronoi-Diagrammen. 
+
+Zum Schluss soll alles in einer Simulation zusammengef\"ugt werden, die als Demo dient, in der die Effekte gezeigt werden, um sie anschlie{\ss}end in Anwendungen, wie zum Beispiel Computerspielen verwenden zu k\"onnen.

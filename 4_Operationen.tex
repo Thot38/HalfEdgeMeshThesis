@@ -189,6 +189,12 @@ public void RemoveFace(Face f)
 	_faces.Remove(f);
 }
 \end{lstlisting}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Images/EdgeCollapseDemo}
+	\caption{Edge-Collapse am Beispiel des Utah-Teapot}
+	\label{fig:edgecollapsedemo}
+\end{figure}
 
 
 \subsection{Subdivision}
@@ -263,6 +269,13 @@ public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = fals
 		_mesh.CommitMeshTriangles();
 }
 \end{lstlisting}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Images/SubdivisionDemo}
+	\caption{Subdivision aller Faces am Beispiel des Utah-Teapot}
+	\label{fig:subdivisiondemo}
+\end{figure}
+
 
 \subsection {2D-Zerst\"orungssimulation}
 Mit Hilfe der Subdivision und dem Edgesplit kann eine einfache, dynamische Zerst\"orungs\-simulation f\"ur zweidimensionale Oberfl\"achen erstellt werden, welche zum Beispiel im Kontext eines Videospiels eine interaktive Welt bietet. 
@@ -365,3 +378,9 @@ public List<Vector3> GetBreakingPoints(Face face, Vector3 impactPoint)
 }
 
 \end{lstlisting}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Images/DestructionExample}
+	\caption{Die Ergebnisse von der Zerst\"orungssimulation mit unterschiedlichen Startpunkten}
+	\label{fig:destructionexample}
+\end{figure}
