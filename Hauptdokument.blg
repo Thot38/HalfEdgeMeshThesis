@@ -1,5 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Hauptdokument.aux
 The style file: alpha.bst
-Database file #1: Hauptdokument.bib
-Warning--there's a month but no year in WikipediaDolphin
-(There was 1 warning)
+Database file #1: Literatur.bib
+Warning--to sort, need author or key in Unity
+Warning--empty publisher in Castello07
+Warning--empty author in Unity
+Warning--empty journal in WikipediaDolphin1
+(There were 4 warnings)

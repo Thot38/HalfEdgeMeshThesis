@@ -32,7 +32,7 @@ List<int> findEdges(int a, int b)
 \end{lstlisting}
 Dieser beispielhafte Implementierungsvorschlag kann benutzt werden, um die betroffenen Faces f\"ur einen EdgeSplit zu finden, um die entsprechende Stelle f\"ur eine Subdivision zu finden, muss der dritte betroffene Punkt mitgegeben werden. Auff\"allig bei dieser Implementierung ist, dass es, im Gegensatz zum Half-Edge-Mesh abh\"angig von der gr\"o{\ss}e des Meshs ist, wodurch es bei dieser Implementierung mit gro{\ss}en Netzen zu Laufzeitproblemen kommen kann.
 
-Auch die \textit{EdgeCollapse}-Methode verwendet die \textit{GetFaceCirculator}-Methode mit konstanter Laufzeit. Zus\"atzlich wird die \textit{GetVertexCirculator}-Methode verwendet, um die Half-Edges an den betroffenen Vertices zu finden. Theoretisch besitzt diese Methode eine konstante Laufzeit in Abh\"angigkeit von der Anzahl der Half-Edges, die den gefragten Vertex verwenden. Im Plankton-Mesh \cite{meshMash} wird folgende Implementierung verwendet:
+Auch die \textit{EdgeCollapse}-Methode verwendet die \textit{GetFaceCirculator}-Methode mit konstanter Laufzeit. Zus\"atzlich wird die \textit{GetVertexCirculator}-Methode verwendet, um die Half-Edges an den betroffenen Vertices zu finden. Theoretisch besitzt diese Methode eine konstante Laufzeit in Abh\"angigkeit von der Anzahl der Half-Edges, die den gefragten Vertex verwenden. Im Plankton-Mesh \cite{Meshmash2017} wird folgende Implementierung verwendet:
 \begin{lstlisting}
 public IEnumerable<int> GetVertexCirculator(int halfedgeIndex)
 {

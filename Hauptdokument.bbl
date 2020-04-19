@@ -1,15 +1,32 @@
-\begin{thebibliography}{Wik07}
+\begin{thebibliography}{CSCF07}
 
-\bibitem[Wik]{WikipediaDolphin}
-Wikipedia~the free encyclopedia.
-\newblock Polygon mesh, 2007.
-\newblock {https://commons.wikimedia.org/wiki/File:Dolphin_triangle_mesh.png#/media/File:Dolphin_triangle_mesh.png} 
+\bibitem[CSCF07]{Castello07}
+P.~Castello, Mateu Sbert, Miguel Chover, and Miquel Feixas.
+\newblock Viewpoint entropy-driven simplification.
+\newblock In {\em WSCG '2007: Full Papers Proceedings}, pages 249 -- 256. 01
+  2007.
+
+\bibitem[Uni20]{Unity}
+Unity. public relations.
+\newblock {\em https://unity3d.com/public-relations}, 2020.
+\newblock [Zuletzt besucht: 15.01.2020].
+
+\bibitem[uSM10]{Shirley2010}
+Peter~Shirley und Steve~Marschner.
+\newblock {\em Fundamentals of Computer Graphics}, chapter 12 Data Structures
+  for Graphics.
+\newblock CRC Press, third edition edition, 2010.
+
+\bibitem[Wik07]{WikipediaDolphin1}
+the free~encyclopedia Wikipedia.
+\newblock Polygon mesh.
+\newblock 2007.
 \newblock [Online; zuletzt besucht am 04.12.2019].
-\begin{WP17}
+
 \bibitem[WP17]{Meshmash2017}
 David~Stasiuk Will~Pearson, Daniel~Piker.
 \newblock Plankton.
-\newblock {https://github.com/meshmash/Plankton}, 2017.
+\newblock {\em GitHub repository}, 2017.
 \newblock [Online; zuletzt besucht am 13.12.2019].
 
 \end{thebibliography}
