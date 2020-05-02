@@ -1,29 +1,30 @@
 \babel@toc {ngerman}{}
-\contentsline {section}{\numberline {1}Grundlagen}{2}% 
-\contentsline {subsection}{\numberline {1.1}Unity3D}{3}% 
-\contentsline {subsection}{\numberline {1.2}Triangular Meshes}{3}% 
-\contentsline {subsection}{\numberline {1.3}Triangular Meshes in Unity}{4}% 
-\contentsline {subsection}{\numberline {1.4}Datenstrukturen f\"ur Meshes}{5}% 
-\contentsline {subsubsection}{\numberline {1.4.1}Triangle-Neighbor Structure}{6}% 
-\contentsline {subsubsection}{\numberline {1.4.2}Winged-Edge Mesh}{6}% 
-\contentsline {section}{\numberline {2}Half-Edge Mesh}{7}% 
-\contentsline {subsection}{\numberline {2.1}Vergleich der Datenstrukturen}{7}% 
-\contentsline {subsection}{\numberline {2.2}Implementierung der Komponenten}{8}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Klassenstruktur}{9}% 
-\contentsline {subsubsection}{\numberline {2.2.2}Die Vertex, HalfEdge und Face Klassen}{9}% 
-\contentsline {subsubsection}{\numberline {2.2.3}Listenklassen}{9}% 
-\contentsline {subsection}{\numberline {2.3}Erstellen eines Half-Edge-Meshes}{10}% 
-\contentsline {subsubsection}{\numberline {2.3.1}GenerateUnityMesh}{10}% 
-\contentsline {subsubsection}{\numberline {2.3.2}GenerateHalfEdgeMesh}{11}% 
-\contentsline {section}{\numberline {3}Operationen}{14}% 
-\contentsline {subsection}{\numberline {3.1}Split Half-Edge}{14}% 
-\contentsline {subsection}{\numberline {3.2}Edge Collapse}{17}% 
-\contentsline {subsection}{\numberline {3.3}Subdivision}{19}% 
-\contentsline {subsection}{\numberline {3.4}2D-Zerst\"orungssimulation}{21}% 
-\contentsline {section}{\numberline {4}Vergleich zwischen Half-Edge Mesh und UnityMesh}{24}% 
-\contentsline {section}{\numberline {5}Ausblick}{26}% 
-\contentsline {section}{\numberline {6}Rechnungen}{27}% 
-\contentsline {subsection}{\numberline {6.1}Indexed Mesh}{27}% 
-\contentsline {subsection}{\numberline {6.2}Triangle-Neighbor Structure}{27}% 
-\contentsline {subsection}{\numberline {6.3}Winged-Edge Mesh}{27}% 
-\contentsline {subsection}{\numberline {6.4}Half-Edge Mesh}{27}% 
+\contentsline {section}{\numberline {1}Abstract}{2}% 
+\contentsline {section}{\numberline {2}Grundlagen}{3}% 
+\contentsline {subsection}{\numberline {2.1}Unity3D}{3}% 
+\contentsline {subsection}{\numberline {2.2}Triangular Meshes}{3}% 
+\contentsline {subsection}{\numberline {2.3}Triangular Meshes in Unity}{4}% 
+\contentsline {subsection}{\numberline {2.4}Datenstrukturen f\"ur Meshes}{5}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Triangle-Neighbor Structure}{6}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Winged-Edge Mesh}{6}% 
+\contentsline {section}{\numberline {3}Half-Edge Mesh}{7}% 
+\contentsline {subsection}{\numberline {3.1}Vergleich der Datenstrukturen}{8}% 
+\contentsline {subsection}{\numberline {3.2}Implementierung der Komponenten}{8}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Klassenstruktur}{9}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Die Vertex, HalfEdge und Face Klassen}{9}% 
+\contentsline {subsubsection}{\numberline {3.2.3}Listenklassen}{9}% 
+\contentsline {subsection}{\numberline {3.3}Erstellen eines Half-Edge-Meshes}{10}% 
+\contentsline {subsubsection}{\numberline {3.3.1}GenerateUnityMesh}{11}% 
+\contentsline {subsubsection}{\numberline {3.3.2}GenerateHalfEdgeMesh}{12}% 
+\contentsline {section}{\numberline {4}Operationen}{14}% 
+\contentsline {subsection}{\numberline {4.1}Split Half-Edge}{14}% 
+\contentsline {subsection}{\numberline {4.2}Edge Collapse}{17}% 
+\contentsline {subsection}{\numberline {4.3}Subdivision}{20}% 
+\contentsline {subsection}{\numberline {4.4}2D-Zerst\"orungssimulation}{22}% 
+\contentsline {section}{\numberline {5}Vergleich zwischen Half-Edge Mesh und UnityMesh}{25}% 
+\contentsline {section}{\numberline {6}Ausblick}{27}% 
+\contentsline {section}{\numberline {7}Rechnungen}{27}% 
+\contentsline {subsection}{\numberline {7.1}Indexed Mesh}{27}% 
+\contentsline {subsection}{\numberline {7.2}Triangle-Neighbor Structure}{28}% 
+\contentsline {subsection}{\numberline {7.3}Winged-Edge Mesh}{28}% 
+\contentsline {subsection}{\numberline {7.4}Half-Edge Mesh}{28}% 
