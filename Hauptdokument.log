@@ -1,41 +1,55 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2020.1.21)  2 MAY 2020 14:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.2)  25 MAR 2023 19:44
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **./Hauptdokument.tex
 (Hauptdokument.tex
-LaTeX2e <2018-12-01>
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-04-20>
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrar
+tcl.cls
+Document Class: scrartcl 2021/11/13 v3.35 KOMA-Script document class (article)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scra
-rtcl.cls"
-Document Class: scrartcl 2019/12/23 v3.28 KOMA-Script document class (article)
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrk
-base.sty"
-Package: scrkbase 2019/12/23 v3.28 KOMA-Script package (KOMA-Script-dependent b
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrkb
+ase.sty
+Package: scrkbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrb
-ase.sty"
-Package: scrbase 2019/12/23 v3.28 KOMA-Script package (KOMA-Script-independent 
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrba
+se.sty
+Package: scrbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.
-sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrl
-file.sty"
-Package: scrlfile 2019/12/23 v3.28 KOMA-Script package (loading files)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlf
+ile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlf
+ile-hook.sty
+Package: scrlfile-hook 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlo
+go.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
 )))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\tocb
-asic.sty"
-Package: tocbasic 2019/12/23 v3.28 KOMA-Script package (handling toc-files)
-\scr@dte@tocline@numberwidth=\skip41
-\scr@dte@tocline@numbox=\box27
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.s
+ty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
 )
-Package tocbasic Info: omitting babel extension for `toc'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 137.
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+))
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\tocba
+sic.sty
+Package: tocbasic 2021/11/13 v3.35 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box50
+)
+Package tocbasic Info: babel extension for `toc' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 135.
 Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             This is correct!
 (scrartcl)             Internally I'm using `fontsize=12pt'.
@@ -43,28 +57,28 @@ Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             you'd have to use `fontsize=12pt' there
 (scrartcl)             instead of `12pt', too.
 Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 2211.
+ine 2242.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrs
-ize12pt.clo"
-File: scrsize12pt.clo 2019/12/23 v3.28 KOMA-Script font size class option (12pt
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrsi
+ze12pt.clo
+File: scrsize12pt.clo 2021/11/13 v3.35 KOMA-Script font size class option (12pt
 )
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\type
-area.sty"
-Package: typearea 2019/12/23 v3.28 KOMA-Script package (type area)
-\ta@bcor=\skip42
-\ta@div=\count80
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\typea
+rea.sty
+Package: typearea 2021/11/13 v3.35 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count185
 Package typearea Info: You've used standard option `a4paper'.
 (typearea)             This is correct!
 (typearea)             Internally I'm using `paper=a4'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `paper=a4' there
 (typearea)             instead of `a4paper', too.
-\ta@hblk=\skip43
-\ta@vblk=\skip44
-\ta@temp=\skip45
-\footheight=\skip46
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 12
 (typearea)             BCOR = 0.0pt
@@ -81,444 +95,267 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1718.
+(typearea)              on input line 1743.
 )
-\c@part=\count81
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@subparagraph=\count86
-\scr@dte@section@maxnumwidth=\skip47
+\c@part=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\scr@dte@section@maxnumwidth=\skip53
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\section on input line 4722.
+(scrartcl)           for `\section on input line 4852.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\section on input line 4722.
-\scr@dte@part@maxnumwidth=\skip48
+(scrartcl)           for `\section on input line 4852.
+\scr@dte@part@maxnumwidth=\skip54
 Class scrartcl Info: using compatibility default `afterindent=false'
-(scrartcl)           for `\part on input line 4730.
-\scr@dte@subsection@maxnumwidth=\skip49
+(scrartcl)           for `\part on input line 4860.
+\scr@dte@subsection@maxnumwidth=\skip55
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\subsection on input line 4740.
+(scrartcl)           for `\subsection on input line 4870.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\subsection on input line 4740.
-\scr@dte@subsubsection@maxnumwidth=\skip50
+(scrartcl)           for `\subsection on input line 4870.
+\scr@dte@subsubsection@maxnumwidth=\skip56
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\subsubsection on input line 4750.
+(scrartcl)           for `\subsubsection on input line 4880.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\subsubsection on input line 4750.
-\scr@dte@paragraph@maxnumwidth=\skip51
+(scrartcl)           for `\subsubsection on input line 4880.
+\scr@dte@paragraph@maxnumwidth=\skip57
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\paragraph on input line 4760.
+(scrartcl)           for `\paragraph on input line 4891.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\paragraph on input line 4760.
-\scr@dte@subparagraph@maxnumwidth=\skip52
+(scrartcl)           for `\paragraph on input line 4891.
+\scr@dte@subparagraph@maxnumwidth=\skip58
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\subparagraph on input line 4770.
+(scrartcl)           for `\subparagraph on input line 4901.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\subparagraph on input line 4770.
-\abovecaptionskip=\skip53
-\belowcaptionskip=\skip54
-\c@pti@nb@sid@b@x=\box28
-Package tocbasic Info: omitting babel extension for `lof'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 6001.
-\scr@dte@figure@maxnumwidth=\skip55
-\c@figure=\count87
-Package tocbasic Info: omitting babel extension for `lot'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 6013.
-\scr@dte@table@maxnumwidth=\skip56
-\c@table=\count88
-Class scrartcl Info: Redefining `\numberline' on input line 6177.
-\bibindent=\dimen102
-)
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.st
-y"
-Package: babel 2019/06/03 3.32 The Babel package
+(scrartcl)           for `\subparagraph on input line 4901.
+\abovecaptionskip=\skip59
+\belowcaptionskip=\skip60
+\c@pti@nb@sid@b@x=\box51
+Package tocbasic Info: babel extension for `lof' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6076.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.d
-ef"
-File: switch.def 2019/06/03 3.32 Babel switching mechanism
+\scr@dte@figure@maxnumwidth=\skip61
+\c@figure=\count192
+Package tocbasic Info: babel extension for `lot' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6091.
+
+\scr@dte@table@maxnumwidth=\skip62
+\c@table=\count193
+Class scrartcl Info: Redefining `\numberline' on input line 6258.
+\bibindent=\dimen138
 )
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty
+Package: babel 2022/02/26 3.73 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen139
+\l@unhyphenated=\language81
+
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.
+def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
 *************************************
 * Local config file bblopts.cfg used
 *
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cf
-g"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\nge
-rman.ldf"
-Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\nger
+man.ldf
+Language: ngerman 2021/02/27 v2.13 German support for babel (post-1996 orthogra
 phy)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\nge
-rmanb.ldf"
-Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\nger
+manb.ldf
+Language: ngermanb 2021/02/27 v2.13 German support for babel (post-1996 orthogr
 aphy)
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.de
-f"
-File: babel.def 2019/06/03 3.32 Babel common definitions
-\babel@savecnt=\count89
-\U@D=\dimen103
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel
-.def")
-\bbl@dirlevel=\count90
-)
-Package babel Info: Making " an active character on input line 121.
+Package babel Info: Making " an active character on input line 122.
 )))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
-y"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ansinew.def
-"
-File: ansinew.def 2018/08/11 v1.3c Input encoding file
-))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ansinew.def
+File: ansinew.def 2021/02/14 v1.3d Input encoding file
+)) (C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.st
+y
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count91
-\float@exts=\toks17
-\float@box=\box29
-\@float@everytoks=\toks18
-\@floatcapt=\box30
+\c@float@type=\count196
+\float@exts=\toks19
+\float@box=\box52
+\@float@everytoks=\toks20
+\@floatcapt=\box53
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
-x.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx
+.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
-s.sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
+.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.st
-y"
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\gra
-phics.cfg"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\grap
+hics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 107.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdf
-tex.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdft
+ex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latexsym.st
-y"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.
-sty"
-Package: amsmath 2018/12/01 v2.17b AMS math features
-\@mathmargin=\skip57
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
+ty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip63
 
 For additional information on amsmath, use the `?' option.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.
-sty"
-Package: amstext 2000/06/29 v2.01 AMS text
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.s
+ty
+Package: amstext 2021/08/26 v2.01 AMS text
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.s
-ty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.st
+y
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
-\ex@=\dimen106
+\@emptytoks=\toks21
+\ex@=\dimen142
 ))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.s
-ty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.st
+y
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen107
+\pmbraise@=\dimen143
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.s
-ty"
-Package: amsopn 2016/03/08 v2.02 operator names
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
+y
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count92
-LaTeX Info: Redefining \frac on input line 223.
-\uproot@=\count93
-\leftroot@=\count94
-LaTeX Info: Redefining \overline on input line 385.
-\classnum@=\count95
-\DOTSCASE@=\count96
-LaTeX Info: Redefining \ldots on input line 482.
-LaTeX Info: Redefining \dots on input line 485.
-LaTeX Info: Redefining \cdots on input line 606.
-\Mathstrutbox@=\box31
-\strutbox@=\box32
-\big@size=\dimen108
-LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
-\dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
-\tag@help=\toks20
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
-\andhelp@=\toks21
-\eqnshift@=\dimen109
-\alignsep@=\dimen110
-\tagshift@=\dimen111
-\tagwidth@=\dimen112
-\totwidth@=\dimen113
-\lineht@=\dimen114
-\@envbody=\toks22
-\multlinegap=\skip58
-\multlinetaggap=\skip59
-\mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2844.
-LaTeX Info: Redefining \] on input line 2845.
+\inf@bad=\count197
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count198
+\leftroot@=\count199
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count266
+\DOTSCASE@=\count267
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count268
+\c@MaxMatrixCols=\count269
+\dotsspace@=\muskip16
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
+\tag@help=\toks22
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
+\andhelp@=\toks23
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks24
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb
-.sty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.
+sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfont
-s.sty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts
+.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.st
-y"
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
-\thm@preskip=\skip60
-\thm@postskip=\skip61
-\thm@headsep=\skip62
-\dth@everypar=\toks29
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip66
+\thm@postskip=\skip67
+\thm@headsep=\skip68
+\dth@everypar=\toks31
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xpatch\xpatch.st
-y"
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.s
-ty"
-Package: expl3 2020-01-12 L3 programming layer (loader) 
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xpatch\xpatch.sty
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3-c
-ode.tex"
-Package: expl3 2020-01-12 L3 programming layer (code)
-\c_max_int=\count104
-\l_tmpa_int=\count105
-\l_tmpb_int=\count106
-\g_tmpa_int=\count107
-\g_tmpb_int=\count108
-\l__seq_internal_a_int=\count109
-\l__seq_internal_b_int=\count110
-\g__kernel_prg_map_int=\count111
-\c__ior_term_noprompt_ior=\count112
-\c_log_iow=\count113
-\l_iow_line_count_int=\count114
-\l__iow_line_target_int=\count115
-\l__iow_one_indent_int=\count116
-\l__iow_indent_int=\count117
-\c_zero_dim=\dimen115
-\c_max_dim=\dimen116
-\l_tmpa_dim=\dimen117
-\l_tmpb_dim=\dimen118
-\g_tmpa_dim=\dimen119
-\g_tmpb_dim=\dimen120
-\c_zero_skip=\skip63
-\c_max_skip=\skip64
-\l_tmpa_skip=\skip65
-\l_tmpb_skip=\skip66
-\g_tmpa_skip=\skip67
-\g_tmpb_skip=\skip68
-\c_zero_muskip=\muskip11
-\c_max_muskip=\muskip12
-\l_tmpa_muskip=\muskip13
-\l_tmpb_muskip=\muskip14
-\g_tmpa_muskip=\muskip15
-\g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count118
-\l__intarray_loop_int=\count119
-\c__intarray_sp_dim=\dimen121
-\g__intarray_font_int=\count120
-\c__fp_leading_shift_int=\count121
-\c__fp_middle_shift_int=\count122
-\c__fp_trailing_shift_int=\count123
-\c__fp_big_leading_shift_int=\count124
-\c__fp_big_middle_shift_int=\count125
-\c__fp_big_trailing_shift_int=\count126
-\c__fp_Bigg_leading_shift_int=\count127
-\c__fp_Bigg_middle_shift_int=\count128
-\c__fp_Bigg_trailing_shift_int=\count129
-\c__kernel_randint_max_int=\count130
-\g__fp_array_int=\count131
-\l__fp_array_loop_int=\count132
-\l__sort_length_int=\count133
-\l__sort_min_int=\count134
-\l__sort_top_int=\count135
-\l__sort_max_int=\count136
-\l__sort_true_max_int=\count137
-\l__sort_block_int=\count138
-\l__sort_begin_int=\count139
-\l__sort_end_int=\count140
-\l__sort_A_int=\count141
-\l__sort_B_int=\count142
-\l__sort_C_int=\count143
-\l__str_internal_int=\count144
-\c__str_replacement_char_int=\count145
-\l__tl_analysis_normal_int=\count146
-\l__tl_analysis_index_int=\count147
-\l__tl_analysis_nesting_int=\count148
-\l__tl_analysis_type_int=\count149
-\l__regex_internal_a_int=\count150
-\l__regex_internal_b_int=\count151
-\l__regex_internal_c_int=\count152
-\l__regex_balance_int=\count153
-\l__regex_group_level_int=\count154
-\l__regex_mode_int=\count155
-\c__regex_cs_in_class_mode_int=\count156
-\c__regex_cs_mode_int=\count157
-\l__regex_catcodes_int=\count158
-\l__regex_default_catcodes_int=\count159
-\c__regex_catcode_D_int=\count160
-\c__regex_catcode_S_int=\count161
-\c__regex_catcode_L_int=\count162
-\c__regex_catcode_O_int=\count163
-\c__regex_catcode_A_int=\count164
-\c__regex_all_catcodes_int=\count165
-\l__regex_show_lines_int=\count166
-\l__regex_min_state_int=\count167
-\l__regex_max_state_int=\count168
-\l__regex_left_state_int=\count169
-\l__regex_right_state_int=\count170
-\l__regex_capturing_group_int=\count171
-\l__regex_min_pos_int=\count172
-\l__regex_max_pos_int=\count173
-\l__regex_curr_pos_int=\count174
-\l__regex_start_pos_int=\count175
-\l__regex_success_pos_int=\count176
-\l__regex_curr_char_int=\count177
-\l__regex_curr_catcode_int=\count178
-\l__regex_last_char_int=\count179
-\l__regex_case_changed_char_int=\count180
-\l__regex_curr_state_int=\count181
-\l__regex_step_int=\count182
-\l__regex_min_active_int=\count183
-\l__regex_max_active_int=\count184
-\l__regex_replacement_csnames_int=\count185
-\l__regex_match_count_int=\count186
-\l__regex_min_submatch_int=\count187
-\l__regex_submatch_int=\count188
-\l__regex_zeroth_submatch_int=\count189
-\g__regex_trace_regex_int=\count190
-\c_empty_box=\box33
-\l_tmpa_box=\box34
-\l_tmpb_box=\box35
-\g_tmpa_box=\box36
-\g_tmpb_box=\box37
-\l__box_top_dim=\dimen122
-\l__box_bottom_dim=\dimen123
-\l__box_left_dim=\dimen124
-\l__box_right_dim=\dimen125
-\l__box_top_new_dim=\dimen126
-\l__box_bottom_new_dim=\dimen127
-\l__box_left_new_dim=\dimen128
-\l__box_right_new_dim=\dimen129
-\l__box_internal_box=\box38
-\l__coffin_internal_box=\box39
-\l__coffin_internal_dim=\dimen130
-\l__coffin_offset_x_dim=\dimen131
-\l__coffin_offset_y_dim=\dimen132
-\l__coffin_x_dim=\dimen133
-\l__coffin_y_dim=\dimen134
-\l__coffin_x_prime_dim=\dimen135
-\l__coffin_y_prime_dim=\dimen136
-\c_empty_coffin=\box40
-\l__coffin_aligned_coffin=\box41
-\l__coffin_aligned_internal_coffin=\box42
-\l_tmpa_coffin=\box43
-\l_tmpb_coffin=\box44
-\g_tmpa_coffin=\box45
-\g_tmpb_coffin=\box46
-\l__coffin_bounding_shift_dim=\dimen137
-\l__coffin_left_corner_dim=\dimen138
-\l__coffin_right_corner_dim=\dimen139
-\l__coffin_bottom_corner_dim=\dimen140
-\l__coffin_top_corner_dim=\dimen141
-\l__coffin_scaled_total_height_dim=\dimen142
-\l__coffin_scaled_width_dim=\dimen143
-\c__coffin_empty_coffin=\box47
-\l__coffin_display_coffin=\box48
-\l__coffin_display_coord_coffin=\box49
-\l__coffin_display_pole_coffin=\box50
-\l__coffin_display_offset_dim=\dimen144
-\l__coffin_display_x_dim=\dimen145
-\l__coffin_display_y_dim=\dimen146
-\g__char_data_ior=\read1
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.st
+y
+Package: expl3 2022-04-20 L3 programming layer (loader) 
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\l3depre
-cation.def"
-File: l3deprecation.def 2019-04-06 v L3 Deprecated functions
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
+nd-pdftex.def
+File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+\l__pdf_internal_box=\box56
 ))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3back
-end-pdfmode.def"
-File: l3backend-pdfmode.def 2019-04-06 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count191
-\l__pdf_internal_box=\box51
-))
-Package: xpatch 2012/10/02 v0.3 Extending etoolbox patching commands
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xpars
-e\xparse.sty"
-Package: xparse 2020-01-12 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count192
-\g__xparse_grabber_int=\count193
-\l__xparse_m_args_int=\count194
-\l__xparse_v_nesting_int=\count195
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse
+\xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbo
-x.sty"
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count196
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox
+.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count276
 ))
 Class scrartcl Info: amsthm's \deferred@thm@head patched.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2e\algo
-rithm2e.sty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2e\algor
+ithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count197
+\c@AlgoLine=\count277
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip69
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddp
-age.sty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpa
+ge.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count198
+\c@checkoddpage=\count278
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspace.sty
-"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\relsize.
-sty"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\relsize.s
+ty
 Package: relsize 2013/03/29 ver 4.1
 )
 \skiptotal=\skip70
@@ -529,276 +366,250 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip75
 \algomargin=\skip76
 \skipalgocfslide=\skip77
-\algowidth=\dimen147
-\inoutsize=\dimen148
-\inoutindent=\dimen149
-\interspacetitleruled=\dimen150
-\interspacealgoruled=\dimen151
-\interspacetitleboxruled=\dimen152
+\algowidth=\dimen151
+\inoutsize=\dimen152
+\inoutindent=\dimen153
+\interspacetitleruled=\dimen154
+\interspacealgoruled=\dimen155
+\interspacetitleboxruled=\dimen156
 \algocf@ruledwidth=\skip78
-\algocf@inoutbox=\box52
-\algocf@inputbox=\box53
+\algocf@inoutbox=\box57
+\algocf@inputbox=\box58
 \AlCapSkip=\skip79
 \AlCapHSkip=\skip80
 \algoskipindent=\skip81
-\algocf@nlbox=\box54
-\algocf@hangingbox=\box55
-\algocf@untilbox=\box56
+\algocf@nlbox=\box59
+\algocf@hangingbox=\box60
+\algocf@untilbox=\box61
 \algocf@skipuntil=\skip82
-\algocf@capbox=\box57
+\algocf@capbox=\box62
 \algocf@lcaptionbox=\skip83
 \algoheightruledefault=\skip84
 \algoheightrule=\skip85
 \algotitleheightruledefault=\skip86
 \algotitleheightrule=\skip87
-\c@algocfline=\count199
-\c@algocfproc=\count266
-\c@algocf=\count267
-\algocf@algoframe=\box58
-\algocf@algobox=\box59
+\c@algocfline=\count279
+\c@algocfproc=\count280
+\c@algocf=\count281
+\algocf@algoframe=\box63
+\algocf@algobox=\box64
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.st
-y"
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\col
-or.cfg"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\colo
+r.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 227.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\colortb
-l.sty"
-Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\colortbl
+.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
-Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
-\col@sep=\dimen153
-\ar@mcellbox=\box60
-\extrarowheight=\dimen154
-\NC@list=\toks30
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen157
+\ar@mcellbox=\box65
+\extrarowheight=\dimen158
+\NC@list=\toks32
 \extratabsurround=\skip88
 \backup@length=\skip89
-\ar@cellbox=\box61
+\ar@cellbox=\box66
 )
-\everycr=\toks31
+\everycr=\toks33
 \minrowclearance=\skip90
 )
-\rownum=\count268
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+\rownum=\count282
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfig\subfig.st
-y"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.
-sty"
-Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.s
+ty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3
-.sty"
-Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen155
-\captionmargin@=\dimen156
-\captionwidth=\dimen157
-\caption@tempdima=\dimen158
-\caption@indent=\dimen159
-\caption@parindent=\dimen160
-\caption@hangindent=\dimen161
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.
+sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen159
+\captionmargin=\dimen160
+\caption@leftmargin=\dimen161
+\caption@rightmargin=\dimen162
+\caption@width=\dimen163
+\caption@indent=\dimen164
+\caption@parindent=\dimen165
+\caption@hangindent=\dimen166
 Package caption Info: KOMA-Script document class detected.
-)
-Package caption Info: KOMA-Script document class.
-\c@caption@flags=\count269
-\c@continuedfloat=\count270
+
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption-k
+oma.sto
+File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the 
+KOMA-Script document classes (AR)
+))
+\c@caption@flags=\count283
+\c@continuedfloat=\count284
 Package caption Info: float package is loaded.
 )
-\c@KVtest=\count271
+\c@KVtest=\count285
 \sf@farskip=\skip91
-\sf@captopadj=\dimen162
+\sf@captopadj=\dimen167
 \sf@capskip=\skip92
 \sf@nearskip=\skip93
-\c@subfigure=\count272
-\c@subfigure@save=\count273
-\c@lofdepth=\count274
-\c@subtable=\count275
-\c@subtable@save=\count276
-\c@lotdepth=\count277
+\c@subfigure=\count286
+\c@subfigure@save=\count287
+\c@lofdepth=\count288
+\c@subtable=\count289
+\c@subtable@save=\count290
+\c@lotdepth=\count291
 \sf@top=\skip94
 \sf@bottom=\skip95
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\listing
-sutf8.sty"
-Package: listingsutf8 2016/05/16 v1.3 Allow UTF-8 in listings input (HO)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listingsutf8\list
+ingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listing
-s.sty"
-\lst@mode=\count278
-\lst@gtempboxa=\box62
-\lst@token=\toks32
-\lst@length=\count279
-\lst@currlwidth=\dimen163
-\lst@column=\count280
-\lst@pos=\count281
-\lst@lostspace=\dimen164
-\lst@width=\dimen165
-\lst@newlines=\count282
-\lst@lineno=\count283
-\lst@maxwidth=\dimen166
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings
+.sty
+\lst@mode=\count292
+\lst@gtempboxa=\box67
+\lst@token=\toks34
+\lst@length=\count293
+\lst@currlwidth=\dimen168
+\lst@column=\count294
+\lst@pos=\count295
+\lst@lostspace=\dimen169
+\lst@width=\dimen170
+\lst@newlines=\count296
+\lst@lineno=\count297
+\lst@maxwidth=\dimen171
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc
-.sty"
-File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count284
-\lst@skipnumbers=\count285
-\lst@framebox=\box63
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.
+sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count298
+\lst@skipnumbers=\count299
+\lst@framebox=\box68
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listing
-s.cfg"
-File: listings.cfg 2019/09/10 1.8c listings configuration
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings
+.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package: listings 2019/09/10 1.8c (Carsten Heinz)
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdfte
-xcmds.sty"
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdftexcmds\pdft
+excmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infwa
-rerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwa
+rerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\iflua
-tex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcm
-ds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds
+.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf
-.sty"
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\strin
-genc.sty"
-Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/stringenc\strin
+genc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdfes
-cape.sty"
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfescape\pdfes
+cape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang
-1.sty"
-File: lstlang1.sty 2019/09/10 1.8c listings language file
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1
+.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (Hauptdokument.aux)
 \openout1 = `Hauptdokument.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
--pdf.mkii"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
+pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count286
-\scratchdimen=\dimen167
-\scratchbox=\box64
-\nofMPsegments=\count287
-\nofMParguments=\count288
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count289
-\MPscratchDim=\dimen168
-\MPnumerator=\count290
-\makeMPintoPDFobject=\count291
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count300
+\scratchdimen=\dimen172
+\scratchbox=\box69
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen173
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks36
 )
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopd
-f-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.
-sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdef
-inekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptio
-ns.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvset
-keys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexc
-mds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-)))
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
+opdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-)
+85.
+
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\epstopdf
+-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count292
+\c@lstlisting=\count306
  [1
 
-{C:/Users/Yannick/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (Hauptdok
-ument.toc
-LaTeX Font Info:    Try loading font information for U+lasy on input line 4.
+{C:/Users/Yannick/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}] (Haupt
+dokument.toc
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 4.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
+
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
-"
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
-"
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write3
 \openout3 = `Hauptdokument.toc'.
 
- (1_Einleitung/Intro.tex) (2_Grundlagen/Unity.tex [2]
-<Images/Dolphin_triangle_mesh.png, id=12, 636.3775pt x 392.46625pt>
+ [1] (1_Einleitung/Intro.tex) [2] (2_Grundlagen/Unity.tex
+<Images/Dolphin_triangle_mesh.png, id=15, 636.3775pt x 392.46625pt>
 File: Images/Dolphin_triangle_mesh.png Graphic file (type png)
 <use Images/Dolphin_triangle_mesh.png>
 Package pdftex.def Info: Images/Dolphin_triangle_mesh.png  used on input line 1
@@ -808,60 +619,54 @@ Package pdftex.def Info: Images/Dolphin_triangle_mesh.png  used on input line 1
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3]
+
 Underfull \hbox (badness 10000) in paragraph at lines 23--25
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 27.
-
+[3]
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
+27.
 LaTeX Font Info:    No file OMScmss.fd. on input line 27.
+
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 27.
 
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 29.
-
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+28.
+(C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Trying to load font information for OML+cmss on input line 
+29.
 LaTeX Font Info:    No file OMLcmss.fd. on input line 29.
+
 
 LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
 (Font)              for symbol `textless' on input line 29.
 
 [4 <./Images/Dolphin_triangle_mesh.png (PNG copy)>]
-<Images/UnityQuadWireframe.png, id=24, 165.0165pt x 163.812pt>
+<Images/UnityQuadWireframe.png, id=28, 165.0165pt x 163.812pt>
 File: Images/UnityQuadWireframe.png Graphic file (type png)
 <use Images/UnityQuadWireframe.png>
 Package pdftex.def Info: Images/UnityQuadWireframe.png  used on input line 71.
 (pdftex.def)             Requested size: 156.84856pt x 155.70299pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] [6 <./Images/UnityQuadWireframe.png>]) (2_Grundlagen/Mesh.tex)
-(3_HalfEdgeMesh/Implementierung.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
-
-("C:\Users\Yannick\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
-<Images/half-edge-mesh.png, id=31, 623.32875pt x 372.39125pt>
+ [5 <./Images/UnityQuadWireframe.png>] [6]) [7] (2_Grundlagen/Mesh.tex) (3_Half
+EdgeMesh/Implementierung.tex
+<Images/half-edge-mesh.png, id=39, 623.32875pt x 372.39125pt>
 File: Images/half-edge-mesh.png Graphic file (type png)
 <use Images/half-edge-mesh.png>
 Package pdftex.def Info: Images/half-edge-mesh.png  used on input line 11.
 (pdftex.def)             Requested size: 313.69029pt x 187.40547pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7]
+[8 <./Images/half-edge-mesh.png>]
 Overfull \hbox (37.5807pt too wide) in paragraph at lines 24--50
  [][] 
  []
 
-[8 <./Images/half-edge-mesh.png>] [9]
+[9]
 Overfull \hbox (18.3439pt too wide) in paragraph at lines 71--72
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -872,7 +677,7 @@ Overfull \hbox (57.76431pt too wide) in paragraph at lines 75--76
 ][][][][][][][][][][][][][][][][] 
  []
 
-<Images/ClassDiagramHalfEdgeMesh.png, id=46, 996.72375pt x 1734.48pt>
+<Images/ClassDiagramHalfEdgeMesh.png, id=51, 996.72375pt x 1734.48pt>
 File: Images/ClassDiagramHalfEdgeMesh.png Graphic file (type png)
 <use Images/ClassDiagramHalfEdgeMesh.png>
 Package pdftex.def Info: Images/ClassDiagramHalfEdgeMesh.png  used on input lin
@@ -883,38 +688,38 @@ Overfull \hbox (24.91397pt too wide) in paragraph at lines 136--137
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[11] [12] [13]) (4_Operationen.tex [14]
-<Images/splitHalfEdge.png, id=63, 3411.74625pt x 353.32pt>
+[11] [12] [13]) [14] (4_Operationen.tex
+<Images/splitHalfEdge.png, id=68, 3411.74625pt x 353.32pt>
 File: Images/splitHalfEdge.png Graphic file (type png)
 <use Images/splitHalfEdge.png>
 Package pdftex.def Info: Images/splitHalfEdge.png  used on input line 28.
 (pdftex.def)             Requested size: 448.13095pt x 46.40764pt.
  [15 <./Images/splitHalfEdge.png>]
-<Images/meshmash.png, id=68, 1445.4pt x 275.22826pt>
+[16]
+<Images/meshmash.png, id=76, 1445.4pt x 275.22826pt>
 File: Images/meshmash.png Graphic file (type png)
 <use Images/meshmash.png>
 Package pdftex.def Info: Images/meshmash.png  used on input line 101.
 (pdftex.def)             Requested size: 448.13095pt x 85.33247pt.
-
-[16]
-<Images/EdgeCollapse.png, id=72, 2701.09125pt x 607.26875pt>
+ [17 <./Images/meshmash.png>]
+<Images/EdgeCollapse.png, id=81, 2701.09125pt x 607.26875pt>
 File: Images/EdgeCollapse.png Graphic file (type png)
 <use Images/EdgeCollapse.png>
 Package pdftex.def Info: Images/EdgeCollapse.png  used on input line 119.
 (pdftex.def)             Requested size: 448.13095pt x 100.75099pt.
- [17 <./Images/meshmash.png>] [18 <./Images/EdgeCollapse.png>]
-<Images/EdgeCollapseDemo.png, id=81, 933.4875pt x 244.5135pt>
+ [18 <./Images/EdgeCollapse.png>] [19]
+<Images/EdgeCollapseDemo.png, id=90, 933.4875pt x 244.5135pt>
 File: Images/EdgeCollapseDemo.png Graphic file (type png)
 <use Images/EdgeCollapseDemo.png>
 Package pdftex.def Info: Images/EdgeCollapseDemo.png  used on input line 194.
 (pdftex.def)             Requested size: 403.31511pt x 105.64243pt.
- [19 <./Images/EdgeCollapseDemo.png>]
-<Images/splitFace.png, id=87, 1909.1325pt x 342.27875pt>
+<Images/splitFace.png, id=91, 1909.1325pt x 342.27875pt>
 File: Images/splitFace.png Graphic file (type png)
 <use Images/splitFace.png>
 Package pdftex.def Info: Images/splitFace.png  used on input line 215.
 (pdftex.def)             Requested size: 448.13095pt x 80.34149pt.
 
+[20 <./Images/EdgeCollapseDemo.png>]
 Overfull \hbox (3.71011pt too wide) in paragraph at lines 220--221
 []\OT1/cmr/m/n/12 In C# er-gibt sich dar-aus der fol-gen-de Quell-co-de, wel-ch
 er durch den []Ubergabeparameter
@@ -925,13 +730,13 @@ Overfull \hbox (90.61465pt too wide) in paragraph at lines 222--223
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[20 <./Images/splitFace.png>]
-<Images/SubdivisionDemo.png, id=92, 901.56825pt x 238.491pt>
+[21 <./Images/splitFace.png>]
+<Images/SubdivisionDemo.png, id=100, 901.56825pt x 238.491pt>
 File: Images/SubdivisionDemo.png Graphic file (type png)
 <use Images/SubdivisionDemo.png>
 Package pdftex.def Info: Images/SubdivisionDemo.png  used on input line 274.
 (pdftex.def)             Requested size: 403.31511pt x 106.68675pt.
- [21]
+
 Overfull \hbox (0.8032pt too wide) in paragraph at lines 281--282
 \OT1/cmr/m/n/12 Mit Hil-fe der Sub-di-vi-si-on und dem Ed-ge-split kann ei-ne e
 in-fa-che, dy-na-mi-sche Zerst[]orungs-
@@ -942,90 +747,94 @@ Overfull \hbox (11.77383pt too wide) in paragraph at lines 355--356
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<Images/DestructionExample.png, id=103, 719.68875pt x 223.43475pt>
+[24]
+<Images/DestructionExample.png, id=112, 719.68875pt x 223.43475pt>
 File: Images/DestructionExample.png Graphic file (type png)
 <use Images/DestructionExample.png>
 Package pdftex.def Info: Images/DestructionExample.png  used on input line 383.
 
 (pdftex.def)             Requested size: 403.31511pt x 125.21806pt.
-) (5_Vergleich.tex [24 <./Images/DestructionExample.png>]
+) [25 <./Images/DestructionExample.png>] (5_Vergleich.tex
 Overfull \hbox (24.91397pt too wide) in paragraph at lines 12--13
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[25]
+[26]
 Overfull \hbox (18.3439pt too wide) in paragraph at lines 39--40
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[26]) (2_Grundlagen/Datenstrukturen.tex [27]
+[27]) [28] (2_Grundlagen/Datenstrukturen.tex
 Overfull \hbox (27.80627pt too wide) in paragraph at lines 12--18
-$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (3 \OMS/cmsy/m/n/12  
-\OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 + 3 \OMS/cmsy/m/n/12 
- \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) +
+$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 (3 \OMS/cmsy/m/n/12 
+^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 + 3 \OMS/cmsy/m/n/
+12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) +
  []
 
 
 Overfull \hbox (98.0135pt too wide) in paragraph at lines 20--26
-$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (8\OML/cmm/m/it/12 By
-te[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/
-it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/
-m/n/12 +
+$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B ^^C\OT1/cmr/m/n/12 (8\OML/cmm/m/it/1
+2 Byte[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cm
+m/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT
+1/cmr/m/n/12 +
  []
 
 
 Overfull \hbox (69.36266pt too wide) in paragraph at lines 20--26
 \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 n[][] \OMS
-/cmsy/m/n/12  \OT1/cmr/m/n/12 (4 \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/
-m/it/12 Byte[] \OT1/cmr/m/n/12 +
+/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 (4 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/
+cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 +
  []
 
 )
-Overfull \hbox (98.0135pt too wide) in paragraph at lines 28--80
-$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (8\OML/cmm/m/it/12 By
-te[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/
-it/12 n[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/
-m/n/12 +
+Overfull \hbox (98.0135pt too wide) in paragraph at lines 28--88
+$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B ^^C\OT1/cmr/m/n/12 (8\OML/cmm/m/it/1
+2 Byte[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cm
+m/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT
+1/cmr/m/n/12 +
  []
 
 
-Overfull \hbox (221.3583pt too wide) in paragraph at lines 28--80
-\OT1/cmr/m/n/12 3 \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 n[]\OT1/cmr/m/n/12 (4 \OM
-S/cmsy/m/n/12  \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 )[] 
+Overfull \hbox (221.3583pt too wide) in paragraph at lines 28--88
+\OT1/cmr/m/n/12 3 \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 n[]\OT1/cmr/m/n/12 (4 \
+OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 )[]
+ 
  []
 
-[28] (Hauptdokument.bbl) [29] [30 <./Images/ClassDiagramHalfEdgeMesh.png>]
+[29] (Hauptdokument.bbl) [30] [31 <./Images/ClassDiagramHalfEdgeMesh.png>]
 (Hauptdokument.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21412 strings out of 492895
- 392604 string characters out of 3122801
- 772440 words of memory out of 3000000
- 25093 multiletter control sequences out of 15000+200000
- 541745 words of font info for 61 fonts, out of 3000000 for 9000
+ 13054 strings out of 478609
+ 241174 string characters out of 2840967
+ 885150 words of memory out of 3000000
+ 30987 multiletter control sequences out of 15000+600000
+ 478610 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,88p,10110b,1761s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Yannick/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Yannick/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/U
-sers/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr6.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsl12.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Yannick/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Yannick/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
-/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
-2.pfb>
-Output written on Hauptdokument.pdf (30 pages, 927544 bytes).
+ 108i,11n,106p,10610b,1808s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Yannick\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm1200.pk> <C:\Users\Yannick\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknap
+pen/ec/dpi600\tcss1095.pk><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Yannick/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Yannick/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users
+/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
+.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr17.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Yannick/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Yannick
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+<C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti12.pfb>
+Output written on Hauptdokument.pdf (32 pages, 939569 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
+ 192 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -103,14 +103,14 @@ In wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{
 	\label{fig:meshmash}
 \end{figure}
 
-Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da alle \"Anderungen lokal an den betroffenen HalfEdges vorgenommen werden k\"onnen und die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden HalfEdges einer Face zur\"uckgibt. Wird im Gegensatz dazu die selbe Operation nur mithilfe vom UnityMesh versucht, so m\"usste mittels Brute-Force zuerst jeder Index der Eckpunkte der gesuchten Kante ermittelt werden, da diese nicht explizit dargestellt wird, um anschlie{\ss}end in den Indices die Dreiecke zu finden, die diese Eckpunkte verwenden, damit diese durch die neu bestimmten Dreiecke ersetzt werden k\"onnen. Daraus resultiert einen Laufzeit, in Abh\"angigkeit von der Anzahl der Vertices im Netz, wodurch es zu Performanceproblemen bei gro{\ss}en Netzen kommen kann.
+Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da alle \"Anderungen lokal an den betroffenen HalfEdges vorgenommen werden k\"onnen und die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden HalfEdges einer Face zur\"uckgibt. Wird im Gegensatz dazu die selbe Operation nur mithilfe vom UnityMesh versucht, so m\"usste mittels Brute-Force zuerst jeder Index der Eckpunkte der gesuchten Kante ermittelt werden, da diese nicht explizit dargestellt wird, um anschlie{\ss}end in den Indices die Dreiecke zu finden, die diese Eckpunkte verwenden, damit diese durch die neu bestimmten Dreiecke ersetzt werden k\"onnen. Daraus resultiert eine Laufzeit in Abh\"angigkeit von der Anzahl der Vertices im Netz, wodurch es zu Performanceproblemen bei gro{\ss}en Netzen kommen kann.
 
 \subsection{Edge Collapse}
 Der Edge-Collapse ist eine Operation, die dazu dient, die Komplexit\"at eines Models zu reduzieren. Dabei werden zwei Punkte zusammengef\"uhrt, indem eine Kante zusammenf\"allt, wodurch bei einer Operation zwei Dreiecksfl\"achen entfernt werden, ohne die gesamte Struktur zu ver\"andern \cite{Castello07}. In diesem Ansatz kann bestimmt werden, zu welchem Punkt die Kante zusammenf\"allt, je nachdem, welche der beiden HalfEdges als Ursprung gew\"ahlt wird, da daf\"ur der Endpunkt der HalfEdge verwendet wird. 
 Um einen Edge-Collapse durchzuf\"uhren, m\"ussen die Schritte aus Abbildung \ref{fig:edgecollapse} befolgt werden:
 \begin{enumerate}
 	\item Bestimme die an der HalfEdge anliegenden Vertices, HalfEdges und Faces.
-	\item Setze die Referenzen der Nachbarschaftsbeziehung neu, die Nachbarn der HalfEdges die an der selben HalfEdge liegen und nicht teil der kollabierenden Kante sind werden Nachbarn.
+	\item Setze die Referenzen der Nachbarschaftsbeziehung neu, die Nachbarn der HalfEdges die an der selben HalfEdge liegen und nicht teil der kollabierenden Kante sind, werden Nachbarn.
 	\item Entferne die betroffene Faces und HalfEdges.
 	\item Setze alle Referenzen von einem Vertex auf den andern, entferne den Unbenutzten.
 \end{enumerate}
