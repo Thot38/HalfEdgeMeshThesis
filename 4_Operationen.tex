@@ -48,17 +48,17 @@ public void SplitHalfEdge(HalfEdge split, Vector3 splitPoint)
 
 	// --- Schritt 3:
 	HalfEdge newHalfEdge = _mesh.HalfEdges
-	.CreateHalfEdge(split.OutgoingPoint, null, split);
+		.CreateHalfEdge(split.OutgoingPoint, null, split);
 	_newHalfEdge = newHalfEdge;
 	Face newFace = _mesh.Faces.CreateFace(newHalfEdge);
 	split.OutgoingPoint = newPoint;
 
 	HalfEdge newHalfEdgeToSplit = _mesh.HalfEdges
-	.CreateHalfEdge(split.Next.EndPoint, split.Face, split);
+		.CreateHalfEdge(split.Next.EndPoint, split.Face, split);
 	HalfEdge newHalfEdgeFromNewHalfEdge = _mesh.HalfEdges
-	.CreateHalfEdge(newPoint, newFace, split.Next.Next);
+		.CreateHalfEdge(newPoint, newFace, split.Next.Next);
 	_mesh.HalfEdges
-	.CreatePair(newHalfEdgeToSplit, newHalfEdgeFromNewHalfEdge);
+		.CreatePair(newHalfEdgeToSplit, newHalfEdgeFromNewHalfEdge);
 
 	// --- Schritt 4:
 	newHalfEdge.Next = newHalfEdgeFromNewHalfEdge;
@@ -70,13 +70,13 @@ public void SplitHalfEdge(HalfEdge split, Vector3 splitPoint)
 	
 	_mesh.SetMeshTriangles(split.Face.Index,
 	_mesh.Faces.GetFaceCirculator(split.Face)
-	.Select(p => p.OutgoingPoint.Index)
-	.ToList(), true);
+		.Select(p => p.OutgoingPoint.Index)
+		.ToList(), true);
 	 
 	_mesh.SetMeshTriangles(newFace.Index,
 	_mesh.Faces.GetFaceCirculator(newFace)
-	.Select(p => p.OutgoingPoint.Index)
-	.ToList(), true);
+		.Select(p => p.OutgoingPoint.Index)
+		.ToList(), true);
 	
 	if (!_lock) // --- Blockiere nach dem ersten Aufruf,
 				// --- um eine Endlosschleife zu vermeiden
@@ -91,11 +91,11 @@ public void SplitHalfEdge(HalfEdge split, Vector3 splitPoint)
 			_mesh.HalfEdges.CreatePair(split, _newHalfEdge);
 			_lock = false;
 		}
-	_mesh.CommitMeshTriangles();
+		_mesh.CommitMeshTriangles();
 	}
 }
 \end{lstlisting}
-In wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{fig:meshmash} angewendet, so ist das Mesh im zweite Bild das Ergebnis, wenn die Diagonale gesplittet wird und im Dritten, wenn die linke Kante unterhalb der Mitte geteilt wird. Das letzte Bild zeigt, dass der Teilungspunkt nicht zwingend auf der Kante liegen muss, da sich die Kanten entsprechend anpassen.
+Wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{fig:meshmash} angewendet, so ist das Mesh im zweite Bild das Ergebnis, wenn die Diagonale gesplittet wird. Wird stattdessen die linke Kante unterhalb der Mitte geteilt wird, entsteht das Mesh im dritten Bild. Das letzte Bild zeigt, dass der Teilungspunkt nicht zwingend auf der Kante liegen muss, da sich die Kanten entsprechend anpassen.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1 \linewidth]{Images/meshmash}
@@ -179,7 +179,7 @@ public void RemoveFace(Face f)
 		halfEdge.Opposing.Opposing = null;
 
 		if(_mesh.Vertices.GetVertexCirculator(halfEdge.OutgoingPoint)
-		.Count <= 0)
+			.Count <= 0)
 		{
 			_mesh.Vertices.RemoveVertex(halfEdge.OutgoingPoint);
 		}
@@ -217,9 +217,10 @@ Im Gegensatz zum Edge-Collapse kann es beim Arbeiten mit 3D-Modellen auch n\"oti
 	\label{fig:splitface}
 \end{figure}
 
-In C\# ergibt sich daraus der folgende Quellcode, welcher durch den \"Ubergabeparameter \textit{isTransaction} f\"ur den Gebrauch im gesamten Mesh optimiert ist.
+In C\# ergibt sich daraus der folgende Quellcode, welcher durch den \"Ubergabe\-para\-meter \textit{isTransaction} f\"ur den Gebrauch im gesamten Mesh optimiert ist.
 \begin{lstlisting}
-public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = false)
+public void SplitFace(Face face, Vector3 pointToSplit,
+	bool isTransaction = false)
 {
 	// --- Schritt 1:
 	Vertex center = _mesh.Vertices.CreateVertex(pointToSplit);
@@ -235,7 +236,8 @@ public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = fals
 	{
 		HalfEdge halfEdge = halfEdges[i];
 		Face newFace = face;
-		if (i == 0)        // --- reuse old face
+		// --- reuse old face
+		if (i == 0)      
 		{
 			newFace.HalfEdge = halfEdge;
 		}
@@ -245,18 +247,21 @@ public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = fals
 		}
 
 		HalfEdge newHalfEdgeFromCenter =
-		_mesh.HalfEdges.CreateHalfEdge(center, newFace, halfEdge);
+			_mesh.HalfEdges.CreateHalfEdge(center, newFace, halfEdge);
 		HalfEdge newHalfEdgeToCenter =
-		_mesh.HalfEdges.CreateHalfEdge(halfEdge.EndPoint, 
-		newFace, newHalfEdgeFromCenter);
+			_mesh.HalfEdges.CreateHalfEdge(halfEdge.EndPoint, 
+			newFace, newHalfEdgeFromCenter);
 		halfEdge.Next = newHalfEdgeToCenter;
 
 		_mesh.SetMeshTriangles(newFace.Index,
 		_mesh.Faces.GetFaceCirculator(newFace)
-		.Select(p => p.OutgoingPoint.Index)
-		.ToList(), true);
-		newHalfEdges.AddRange(new List<HalfEdge>
-		{ newHalfEdgeFromCenter, newHalfEdgeToCenter, halfEdge });
+			.Select(p => p.OutgoingPoint.Index)
+			.ToList(), true);
+		newHalfEdges.AddRange(new List<HalfEdge>{ 
+			newHalfEdgeFromCenter, 
+			newHalfEdgeToCenter, 
+			halfEdge 
+		});
 	}
 	
 	// --- Schritt 4:
@@ -278,7 +283,7 @@ public void SplitFace(Face face, Vector3 pointToSplit, bool isTransaction = fals
 
 
 \subsection {2D-Zerst\"orungssimulation}
-Mit Hilfe der Subdivision und dem Edgesplit kann eine einfache, dynamische Zerst\"orungs\-simulation f\"ur zweidimensionale Oberfl\"achen erstellt werden, welche zum Beispiel im Kontext eines Videospiels eine interaktive Welt bietet. 
+Mit Hilfe der Subdivision und dem Edgesplit kann eine einfache, dynamische Zer\-st\"orungs\-simulation f\"ur zweidimensionale Oberfl\"achen erstellt werden, welche zum Beispiel im Kontext eines Videospiels eine interaktive Welt bietet. 
 
 Die Simulation basiert auf einem Punkt des Meshs, der das Zentrum der Zerst\"orung darstellt, vergleichbar mit dem Aufschlagpunkt eines Hammers. Um diesen Punkt herum werden zuf\"allig weitere Punkte platziert, je nach Material der getroffenen Face unterschiedlich viele, in gr\"o{\ss}er werden Abst\"anden. Von der direkt getroffenen Face wird jede HalfEdge gesplittet, um so gro{\ss}e Splitter, die sich durch das Material ziehen zu simulieren, da auch die gegen\"uberliegenden HalfEdges geteilt werden. Die verteilten Punkte werden Anschlie{\ss}end als neuer Punkt f\"ur die Subdivision verwendet, um so den Bruch konzentrisch vom Epizentrum ausgehen zu lassen. Zu guter Letzt werden die neuen Faces aus dem Mesh ausgetrennt und in ein eigenes Mesh umgewandelt, die einzelnen Bruchst\"ucke bewegen zu k\"onnen.
 
@@ -296,15 +301,15 @@ public void SimulateBreaking(Vector3 impactPoint)
 		 impactPoint);
 		 
 		List<HalfEdge> halfEdges =
-		Faces.GetFaceCirculator(impactedFace).ToList();
+			Faces.GetFaceCirculator(impactedFace).ToList();
 		_faceSplittingBehaviour.SplitFace(impactedFace, impactPoint);
 
 		// --- Aufteilen der Urspruenglichen HalfEdges
 		foreach (HalfEdge oldHe in halfEdges)
 		{
 			_edgeSplittingBehaviour.SplitHalfEdge(oldHe,
-			VectorMath.GetIntermediateVector(
-			oldHe.OutgoingPoint.Point, oldHe.EndPoint.Point));
+				VectorMath.GetIntermediateVector(
+				oldHe.OutgoingPoint.Point, oldHe.EndPoint.Point));
 		}
 
 		// --- Platzieren der neuen Punkte, splitten der Faces
@@ -313,7 +318,7 @@ public void SimulateBreaking(Vector3 impactPoint)
 			if (Faces.TryGetFaceContainingPoint(point, out Face face))
 			{
 				List<HalfEdge> oldHalfEdgesOfFace = 
-				Faces.GetFaceCirculator(face).Select(p => p.Next);
+					Faces.GetFaceCirculator(face).Select(p => p.Next);
 				_faceSplittingBehaviour.SplitFace(face, point);
 			}
 		}
@@ -333,12 +338,12 @@ public void SimulateBreaking(Vector3 impactPoint)
 	
 	
 			List<HalfEdge> createdHalfEdges = 
-			Faces.GetFaceCirculator(face).ToList();
-			List<Vertex> vertices = createdHalfEdges
-			.Select(p => p.OutgoingPoint).ToList();
+				Faces.GetFaceCirculator(face).ToList();
+				List<Vertex> vertices = createdHalfEdges
+				.Select(p => p.OutgoingPoint).ToList();
 	
 			mesh.CreateMesh(vertices[0].Point, 
-			vertices[1].Point, vertices[2].Point);
+				vertices[1].Point, vertices[2].Point);
 			Faces.RemoveFace(face);
 		}
 		
@@ -348,11 +353,12 @@ public void SimulateBreaking(Vector3 impactPoint)
 	}
 }
 \end{lstlisting}
-Bei der Bestimmung der Bruchpunkte wird der \textit{BreakingBehaviourDeterminer} verwendet, welcher zuf\"allige Punkte in gr\"o{\ss}er werdenden Kreisen platziert, relativ zu dem Gew\"ahlten Punkt. Die Methode \textit{GetMaterialBreakingBehaviour} gibt eine Liste mit Integern zur\"uck, die die Anzahl an Punkten in jedem Kreis f\"ur ein Material vordefiniert.
+Bei der Bestimmung der Bruchpunkte wird der \textit{BreakingBehaviourDeterminer} verwendet, welcher zuf\"allige Punkte in gr\"o{\ss}er werdenden Kreisen platziert, relativ zu dem gew\"ahlten Punkt. Die Methode \textit{GetMaterialBreakingBehaviour} gibt eine Liste mit Integern zur\"uck, die die Anzahl an Punkten in jedem Kreis f\"ur ein Material vordefiniert.
 
 Der Code der \textit{GetBreakingPoints}-Methode sieht wie Folgt aus:
 \begin{lstlisting}
-public List<Vector3> GetBreakingPoints(Face face, Vector3 impactPoint)
+public List<Vector3> GetBreakingPoints(Face face,
+	Vector3 impactPoint)
 {
 	var result = new List<Vector3>();
 	
@@ -361,16 +367,16 @@ public List<Vector3> GetBreakingPoints(Face face, Vector3 impactPoint)
 	Vertex v3 = face.HalfEdge.Next.Next.OutgoingPoint.Point;
 	
 	List<int> materialBehaviour =
-	GetMaterialBreakingBehaviour(face.materialType);
+		GetMaterialBreakingBehaviour(face.materialType);
 	
 	for (int i = 0; i < materialBehaviour.Count; i++)
 	{
 		for (int j = 0; j < materialBehaviour[i]; j++)
 		{
 			Vector3 newPoint = UnityEngine.Random.insideUnitCircle *
-			(i + .5f) + new Vector2(impactPoint.x, impactPoint.z);
+				(i + .5f) + new Vector2(impactPoint.x, impactPoint.z);
 			Vector3 addPoint = new Vector3(newPoint.x,
-			impactPoint.y, newPoint.y);
+				impactPoint.y, newPoint.y);
 			result.Add(addPoint);
 		}
 	}

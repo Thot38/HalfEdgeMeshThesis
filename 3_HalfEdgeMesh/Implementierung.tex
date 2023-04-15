@@ -25,7 +25,7 @@ Jede der vorgestellten Datenstrukturen kommt mit Vor- und Nachteilen. Die Entsch
 			\hline \rowcolor{gray}
 		& Indexed Mesh & TNS & WEM & HEM \\ 
 		\hline 
-		Relativer Speicherbedarf & $36 \times n_v  Byte$ & $116 \times n_v  Byte$ & $228 \times n_v  Byte$ & $228 \times n_v  Byte$ \\ 
+		Relativer Speicherbedarf & $36 \times n_v Byte$ & $116 \times n_v Byte$ & $228 \times n_v Byte$ & $228 \times n_v  Byte$ \\ 
 		\hline 
 		\multicolumn{5}{|c|}{Laufzeitanalyse der m\"oglichen Abfragen:} \\ 
 		\hline 
@@ -68,11 +68,13 @@ Objekte der Klassen \textit{Vertex, HalfEdge, Face} werden jeweils in einer List
 
 \begin{lstlisting}
 
-public HalfEdge CreateHalfEdge(Vertex vertex, Face face, HalfEdge next)
+public HalfEdge CreateHalfEdge(Vertex vertex, Face face, 
+	HalfEdge next)
 {
 	HalfEdge halfEdge = new HalfEdge(vertex, face, next, Count);
 	vertex.HalfEdge = halfEdge;
-	_halfEdges.Add(halfEdge); // --- _halfEdges ist die zugrunde liegende Liste
+	// --- _halfEdges ist die zugrunde liegende Liste
+	_halfEdges.Add(halfEdge);
 	return halfEdge;
 }
 
@@ -133,9 +135,10 @@ Um aus den Daten des Half-Edge-Mesh ein f\"ur Unity brauchbares Mesh zu generier
 	// --- Add triangles
 	foreach (Face face in Faces)
 	{
-		HalfEdge adjacentHalfEdges = Faces.GetFaceCirculator(face).ToList();
+		HalfEdge adjacentHalfEdges = Faces.GetFaceCirculator(face)
+			.ToList();
 		SetMeshTriangles(face.Index, adjacentHalfEdges
-		.Select(p => p.OutgoingPoint.Index).ToList(), true);
+			.Select(p => p.OutgoingPoint.Index).ToList(), true);
 	}
 
 	AddMeshVertices(vertices);
@@ -158,6 +161,7 @@ public void BuildHalfEdgeFromUnityMesh(Mesh mesh)
 {
 	List<Vector3> vertices = mesh.vertices;
 	List<int> triangles = mesh.triangles;
+	
 	// --- Add vertices to HalfEdgeMesh
 	int[] indexChanges = new int[vertices.Length];
 	for (int i = 0; i < vertices.Length; i++)
@@ -188,21 +192,24 @@ public void BuildHalfEdgeFromUnityMesh(Mesh mesh)
 		Vertex point1 = _mesh.Vertices[triangles[i]];
 		Vertex point2 = _mesh.Vertices[triangles[i + 1]];
 		Vertex point3 = _mesh.Vertices[triangles[i + 2]];
-		int[] indices = new[] 
-		{ point1.Index, point2.Index, point3.Index };
+		int[] indices = new[] {
+			point1.Index, 
+			point2.Index, 
+			point3.Index 
+		};
 		List<HalfEdges> pairs = _mesh.HalfEdges
-		.Where(p => indices.Contains(p.OutgoingPoint.Index)
-		&& indices.Contains(p.EndPoint.Index));
+			.Where(p => indices.Contains(p.OutgoingPoint.Index)
+			&& indices.Contains(p.EndPoint.Index));
 	
 		HalfEdge halfEdge1 = _mesh.HalfEdges
-		.CreateHalfEdge(point1, null, null);
+			.CreateHalfEdge(point1, null, null);
 	
 		Face face = _mesh.Faces.CreateFace(halfEdge1);
 	
 		HalfEdge halfEdge2 = _mesh.HalfEdges
-		.CreateHalfEdge(point2, face, halfEdge1);
+			.CreateHalfEdge(point2, face, halfEdge1);
 		HalfEdge halfEdge3 = _mesh.HalfEdges
-		.CreateHalfEdge(point3, face, halfEdge2);
+			.CreateHalfEdge(point3, face, halfEdge2);
 		halfEdge1.Next = halfEdge3;
 	
 		foreach (HalfEdge pair in pairs)
@@ -225,6 +232,6 @@ Beim Erstellen des HalfEdgeMeshes muss beachtet werden, dass beim erzeugen eines
 Zu den Punkten hinter den Indices wird je eine HalfEdge erstellt und zu jeder Triplette wird eine Face erstellt, mit Referenz auf eine der HalfEdges. Zudem m\"ussen alle HalfEdges, die ein Paar mit einer aktuell betrachteten HalfEdge bilden, ermittelt werden. Daf\"ur werden alle HalfEdges gesucht, dessen eingehender und ausgehender Punkt in der Liste der aktuell betrachteten Punkte liegt: 
 \begin{lstlisting}
 List<HalfEdge> pairs = _mesh.HalfEdges
-.Where(p => indices.Contains(p.OutgoingPoint.Index)
-&& indices.Contains(p.EndPoint.Index));
+	.Where(p => indices.Contains(p.OutgoingPoint.Index)
+	&& indices.Contains(p.EndPoint.Index));
 \end{lstlisting}

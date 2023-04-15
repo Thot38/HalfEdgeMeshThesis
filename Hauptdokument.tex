@@ -1,7 +1,9 @@
 \documentclass[12pt,a4paper]{scrartcl}
 
-\usepackage[ngerman]{babel}
 \usepackage[ansinew]{inputenc}
+
+\usepackage[ngerman]{babel}
+\usepackage[babel, german=quotes]{csquotes}
 
 \usepackage{float}
 
@@ -13,6 +15,11 @@
 \usepackage{subfig}
 \usepackage{listingsutf8}
 
+\usepackage[style=numeric]{biblatex}
+\addbibresource{literatur.bib}
+
+
+\definecolor{mygreen}{RGB}{87,166,74}
 \lstset{ % General setup for the package
 	language=Java,
 	basicstyle=\small\sffamily,
@@ -24,7 +31,7 @@
 	showstringspaces=false,
 	showtabs=false,
 	keepspaces,
-	commentstyle=\color{red},
+	commentstyle=\color{mygreen},
 	keywordstyle=\color{blue}
 }
 
@@ -93,7 +100,8 @@
 
 \newpage
 
-\bibliographystyle{alpha}
-\bibliography{Literatur}
+\printbibliography
+%\bibliographystyle{alpha}
+%\bibliography{Literatur}
 
 \end{document}

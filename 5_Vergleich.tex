@@ -9,7 +9,8 @@ List<int> findEdges(int a, int b)
 	// --- All triangle indices
 	int[] tris = _mesh.triangles;
 	
-	// --- The result contains every starting index of a matching triangle
+	// --- The result contains every starting index 
+	// --- of a matching triangle
 	List<int> result = new List<int>();
 	
 	// --- for each pair of three
@@ -36,17 +37,24 @@ Auch die \textit{EdgeCollapse}-Methode verwendet die \textit{GetFaceCirculator}-
 \begin{lstlisting}
 public IEnumerable<int> GetVertexCirculator(int halfedgeIndex)
 {
-	if (halfedgeIndex < 0 || halfedgeIndex > this.Count) { yield break; }
+	if (halfedgeIndex < 0 || halfedgeIndex > this.Count) { 
+		yield break; 
+	}
+	
 	int h = halfedgeIndex;
 	int count = 0;
 	do
 	{
 		yield return h;
 		h = this[this.GetPairHalfedge(h)].NextHalfedge;
-		if (h < 0) { throw new InvalidOperationException
-		("Unset index, cannot continue."); }
-		if (count++ > 999) { throw new InvalidOperationException
-		("Runaway vertex circulator"); }
+		if (h < 0) { 
+		throw new InvalidOperationException
+			("Unset index, cannot continue."); 
+		}
+		if (count++ > 999) {
+			throw new InvalidOperationException
+				("Runaway vertex circulator"); 
+		}
 	}
 	while (h != halfedgeIndex);
 }
