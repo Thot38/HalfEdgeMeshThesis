@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.2)  15 APR 2023 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.2)  16 APR 2023 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1025,43 +1025,7 @@ Package pdftex.def Info: Images/DestructionExample.png  used on input line 389.
 
 (pdftex.def)             Requested size: 403.31511pt x 125.21806pt.
 ) [25 <./Images/DestructionExample.png>] (5_Vergleich.tex [26] [27]) [28] (2_Gr
-undlagen/Datenstrukturen.tex
-Overfull \hbox (27.80627pt too wide) in paragraph at lines 10--16
-$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 (3 \OMS/cmsy/m/n/12 
-^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 + 3 \OMS/cmsy/m/n/
-12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) +
- []
-
-
-Overfull \hbox (98.0135pt too wide) in paragraph at lines 18--24
-$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B ^^C\OT1/cmr/m/n/12 (8\OML/cmm/m/it/1
-2 Byte[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cm
-m/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT
-1/cmr/m/n/12 +
- []
-
-
-Overfull \hbox (69.36266pt too wide) in paragraph at lines 18--24
-\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 n[][] \OMS
-/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 (4 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/
-cmm/m/it/12 Byte[] \OT1/cmr/m/n/12 +
- []
-
-)
-Overfull \hbox (98.0135pt too wide) in paragraph at lines 26--95
-$\OML/cmm/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B ^^C\OT1/cmr/m/n/12 (8\OML/cmm/m/it/1
-2 Byte[] \OT1/cmr/m/n/12 + 12\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 ) + \OML/cm
-m/m/it/12 n[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[] \OT
-1/cmr/m/n/12 +
- []
-
-
-Overfull \hbox (221.3583pt too wide) in paragraph at lines 26--95
-\OT1/cmr/m/n/12 3 \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 n[]\OT1/cmr/m/n/12 (4 \
-OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 Byte[]\OT1/cmr/m/n/12 )[]
- 
- []
-
+undlagen/Datenstrukturen.tex)
 [29]
 Overfull \hbox (17.9711pt too wide) in paragraph at lines 106--106
 []\OT1/cmr/m/n/12 the free en-cy-clo-pe-dia Wi-ki-pe-dia. \OT1/cmr/m/it/12 Po-l
@@ -1077,11 +1041,11 @@ Package logreq Info: Writing requests to 'Hauptdokument.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20905 strings out of 478609
- 397709 string characters out of 2840967
+ 20908 strings out of 478609
+ 397742 string characters out of 2840967
  1299173 words of memory out of 3000000
- 38765 multiletter control sequences out of 15000+600000
- 479080 words of font info for 65 fonts, out of 8000000 for 9000
+ 38767 multiletter control sequences out of 15000+600000
+ 479416 words of font info for 67 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,11n,106p,10610b,2367s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Yannick\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
@@ -1102,7 +1066,7 @@ cm/cmssbx10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb><C:/Users/Yannick/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Yannick/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Hauptdokument.pdf (32 pages, 958891 bytes).
+Output written on Hauptdokument.pdf (32 pages, 961019 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
