@@ -1,26 +1,26 @@
 \section{Operationen}
-Nachdem ein Half-Edge Mesh prozedural erstellt wurde oder ein Unity Mesh umgewandelt wurde, k\"onnen auf ein Half-Edge Mesh einige Standardoperationen angewendet werden. Folgende Operationen werden im folgenden Kapitel erkl\"art und die Implementierung beschrieben:
+In diesem Kapitel werden die Standardoperationen eines Half-Edge Mesh n\"aher erl\"autert. Nachdem ein Half-Edge Mesh prozedural erstellt wurde oder ein Unity Mesh umgewandelt wurde, k\"onnen auf ein Half-Edge Mesh einige Standardoperationen angewendet werden. Folgende Operationen werden im folgenden Kapitel erkl\"art und die Implementierung beschrieben:
 \begin{itemize}
-	\item das Teilen einer HalfEdge (Split HalfEdge),
+	\item das Teilen einer Half-Edge (Split Half-Edge),
 	\item das Kollabieren einer Kante (Edge Collapse),
 	\item das Aufteilen einer Face (Subdivision) und
 	\item eine einfache 2D-Zerst\"orungssimulation (Simulate Breaking).
 \end{itemize}
 
 \subsection{Split Half-Edge}
-Ziel der \textit{SplitHalfEdge}-Methode ist es, eine HalfEdge so zu teilen, dass das Ergebnis der Operation ein konformes Half-Edge Mesh ist, also dass jede Face immer noch aus drei Half-Edges besteht und dass jede Half-Edge maximal einen Partner besitzt. Um das Teilen durchzuf\"uhren, m\"ussen folgende Schritte durchgef\"uhrt werde, die in der Abbildung \ref{fig:splithalfedge} schematisch dargestellt sind:
+Ziel der \textit{SplitHalfEdge}-Methode ist es, eine Half-Edge so zu teilen, dass das Ergebnis der Operation ein konformes Half-Edge Mesh ist, also dass jede Face immer noch aus drei Half-Edges besteht und dass jede Half-Edge maximal einen Partner besitzt. Um das Teilen durchzuf\"uhren, m\"ussen folgende Schritte durchgef\"uhrt werden, die in der Abbildung \ref{fig:splithalfedge} schematisch dargestellt sind:
 \begin{enumerate}
-	\item Bestimme die zu splittende HalfEdge.
-	\item Erzeuge einen neuen Punkt, dort wo sich die HalfEdge aufteilt.
-	\item Erzeuge drei neue HalfEdges und eine neue Face:
+	\item Bestimme die zu splittende Half-Edge.
+	\item Erzeuge einen neuen Punkt, dort wo sich die Half-Edge aufteilt.
+	\item Erzeuge drei neue Half-Edges und eine neue Face:
 	\begin{itemize}
-		\item Eine HalfEdge zum neuen Punkt, vom Ursprung der gesplitteten HalfEdge
-		\item Eine HalfEdge als Nachfolger der ersten HalfEdge, mit dem neuen Punkt als Ursprung 
-		\item Eine HalfEdge als Vorg\"anger der gesplitteten HalfEdge
+		\item Eine Half-Edge zum neuen Punkt, vom Ursprung der gesplitteten Half-Edge.
+		\item Eine Half-Edge als Nachfolger der ersten Half-Edge, mit dem neuen Punkt als Ursprung.
+		\item Eine Half-Edge als Vorg\"anger der gesplitteten Half-Edge.
 	\end{itemize}
-	\item Setze die Referenzen der HalfEdges neus
-	\item F\"uhre Schritte 1-4 f\"ur die der gesplitteten HalfEdge gegen\"uberliegende HalfEdge ebenfalls aus
-	\item Setze die Paare neu
+	\item Setze die Referenzen der Half-Edges neu.
+	\item F\"uhre Schritte 1-4 f\"ur die der gesplitteten Half-Edge gegen\"uberliegende Half-Edge ebenfalls aus.
+	\item Setze die Paare neu.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -95,23 +95,23 @@ public void SplitHalfEdge(HalfEdge split, Vector3 splitPoint)
 	}
 }
 \end{lstlisting}
-Wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{fig:meshmash} angewendet, so ist das Mesh im zweite Bild das Ergebnis, wenn die Diagonale gesplittet wird. Wird stattdessen die linke Kante unterhalb der Mitte geteilt wird, entsteht das Mesh im dritten Bild. Das letzte Bild zeigt, dass der Teilungspunkt nicht zwingend auf der Kante liegen muss, da sich die Kanten entsprechend anpassen.
+Wird die \textit{SplitHalfEdge}-Methode auf das erste Mesh in Abbildung \ref{fig:meshmash} angewendet, so ist das Mesh im zweite Bild das Ergebnis, wenn die Diagonale gesplittet wird. Wird stattdessen die linke Kante unterhalb der Mitte geteilt, entsteht das Mesh im dritten Bild. Das letzte Bild zeigt, dass der Teilungspunkt nicht zwingend auf der Kante liegen muss, da sich die Kanten entsprechend anpassen.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1 \linewidth]{Images/meshmash}
-	\caption{Bild 1 ist das Ausgangsmesh, welches in Bild 2 in der Mitte der Diagonale gesplittet wurde, in Bild 3 ein viertel auf dem Weg nach oben, auf der linken Seite und im 4. Bild eine Einheit links von der Kante}
+	\caption{Bild 1 ist das Ausgangsmesh, welches in Bild 2 in der Mitte der Diagonale gesplittet wurde, in Bild 3 ein Viertel auf dem Weg nach oben, auf der linken Seite und im 4. Bild eine Einheit links von der Kante}
 	\label{fig:meshmash}
 \end{figure}
 
-Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da alle \"Anderungen lokal an den betroffenen HalfEdges vorgenommen werden k\"onnen und die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden HalfEdges einer Face zur\"uckgibt. Wird im Gegensatz dazu die selbe Operation nur mithilfe vom UnityMesh versucht, so m\"usste mittels Brute-Force zuerst jeder Index der Eckpunkte der gesuchten Kante ermittelt werden, da diese nicht explizit dargestellt wird, um anschlie{\ss}end in den Indices die Dreiecke zu finden, die diese Eckpunkte verwenden, damit diese durch die neu bestimmten Dreiecke ersetzt werden k\"onnen. Daraus resultiert eine Laufzeit in Abh\"angigkeit von der Anzahl der Vertices im Netz, wodurch es zu Performanceproblemen bei gro{\ss}en Netzen kommen kann.
+Der beschriebene Algorithmus besitzt eine konstante Laufzeit, da alle \"Anderungen lokal an den betroffenen Half-Edges vorgenommen werden k\"onnen und die einzigen ,,komplexen'' Operationen auf der \textit{GetFaceCirculator}-Methode basieren, die immer die drei anliegenden Half-Edges einer Face zur\"uckgibt. Wird im Gegensatz dazu die selbe Operation nur mithilfe vom UnityMesh versucht, so muss mittels Brute-Force zuerst jeder Index der Eckpunkte der gesuchten Kante ermittelt werden, da diese nicht explizit dargestellt wird, um anschlie{\ss}end in den Indices die Dreiecke zu finden, die diese Eckpunkte verwenden, damit diese durch die neu bestimmten Dreiecke ersetzt werden k\"onnen. Daraus resultiert eine Laufzeit in Abh\"angigkeit von der Anzahl der Vertices im Netz, wodurch es zu Performanceproblemen bei gro{\ss}en Netzen kommen kann.
 
 \subsection{Edge Collapse}
-Der Edge-Collapse ist eine Operation, die dazu dient, die Komplexit\"at eines Models zu reduzieren. Dabei werden zwei Punkte zusammengef\"uhrt, indem eine Kante zusammenf\"allt, wodurch bei einer Operation zwei Dreiecksfl\"achen entfernt werden, ohne die gesamte Struktur zu ver\"andern \cite{Castello07}. In diesem Ansatz kann bestimmt werden, zu welchem Punkt die Kante zusammenf\"allt, je nachdem, welche der beiden HalfEdges als Ursprung gew\"ahlt wird, da daf\"ur der Endpunkt der HalfEdge verwendet wird. 
+Der Edge-Collapse ist eine Operation, die dazu dient, die Komplexit\"at eines Models zu reduzieren. Dazu werden zwei Punkte zusammengef\"uhrt, indem eine Kante zusammenf\"allt, wodurch bei einer Operation zwei Dreiecksfl\"achen entfernt werden, ohne die gesamte Struktur zu ver\"andern \cite{Castello07}. In diesem Ansatz kann bestimmt werden, zu welchem Punkt die Kante zusammenf\"allt, je nachdem, welche der beiden Half-Edges als Ursprung gew\"ahlt wird, da daf\"ur der Endpunkt der Half-Edge verwendet wird. 
 Um einen Edge-Collapse durchzuf\"uhren, m\"ussen die Schritte aus Abbildung \ref{fig:edgecollapse} befolgt werden:
 \begin{enumerate}
-	\item Bestimme die an der HalfEdge anliegenden Vertices, HalfEdges und Faces.
-	\item Setze die Referenzen der Nachbarschaftsbeziehung neu, die Nachbarn der HalfEdges die an der selben HalfEdge liegen und nicht teil der kollabierenden Kante sind, werden Nachbarn.
-	\item Entferne die betroffene Faces und HalfEdges.
+	\item Bestimme die an der Half-Edge anliegenden Vertices, Half-Edges und Faces.
+	\item Setze die Referenzen der Nachbarschaftsbeziehung neu, die Nachbarn der Half-Edges die an derselben Half-Edge liegen und nicht teil der kollabierenden Kante sind, werden Nachbarn.
+	\item Entferne die betroffene Faces und Half-Edges.
 	\item Setze alle Referenzen von einem Vertex auf den andern, entferne den Unbenutzten.
 \end{enumerate}
 \begin{figure}[H]
@@ -201,14 +201,14 @@ public void RemoveFace(Face f)
 Im Gegensatz zum Edge-Collapse kann es beim Arbeiten mit 3D-Modellen auch n\"otig sein, eine Face in mehrere kleinere Faces zu unterteilen, um den Detailgrad des Modells zu erh\"ohen oder Zerst\"orung realistischer zu modellieren. Um dies zu erreichen, bietet die \textit{FaceSplittingBehaviour}-Klasse die \textit{SplitFace}-Methode, die eine gegebene Face an einem gegebenen Punkt in drei kleinere Faces Aufteilt. Um dies zu erreichen muss:
 \begin{enumerate}
 	\item Der neue Punkt auf der Face erzeugt werden.
-	\item F\"ur jede HalfEdge der Face:
+	\item F\"ur jede Half-Edge der Face:
 	\begin{itemize}
-		\item Eine HalfEdge vom Endpunkt der HalfEdge zum neuen Punkt erzeugt werden.
-		\item Eine HalfEdge vom neuen Punkt zum Startpunkt der HalfEdge erzeugt werden.
+		\item Eine Half-Edge vom Endpunkt der Half-Edge zum neuen Punkt erzeugt werden.
+		\item Eine Half-Edge vom neuen Punkt zum Startpunkt der Half-Edge erzeugt werden.
 		\item Eine Face (wenn n\"otig) erzeugt werden.
-		\item Die ,,Next''-Referenz der HalfEdge auf die HalfEdge zum neuen Punkt gesetzt werden.
+		\item Die ,,Next''-Referenz der Half-Edge auf die Half-Edge zum neuen Punkt gesetzt werden.
 	\end{itemize}
-	\item F\"ur jede neue HalfEdge der Partner gesetzt werden.
+	\item F\"ur jede neue Half-Edge der Partner gesetzt werden.
 \end{enumerate}
 \begin{figure}[H]
 	\centering
@@ -285,9 +285,9 @@ public void SplitFace(Face face, Vector3 pointToSplit,
 \subsection {2D-Zerst\"orungssimulation}
 Mit Hilfe der Subdivision und dem Edgesplit kann eine einfache, dynamische Zer\-st\"orungs\-simulation f\"ur zweidimensionale Oberfl\"achen erstellt werden, welche zum Beispiel im Kontext eines Videospiels eine interaktive Welt bietet. 
 
-Die Simulation basiert auf einem Punkt des Meshs, der das Zentrum der Zerst\"orung darstellt, vergleichbar mit dem Aufschlagpunkt eines Hammers. Um diesen Punkt herum werden zuf\"allig weitere Punkte platziert, je nach Material der getroffenen Face unterschiedlich viele, in gr\"o{\ss}er werden Abst\"anden. Von der direkt getroffenen Face wird jede HalfEdge gesplittet, um so gro{\ss}e Splitter, die sich durch das Material ziehen zu simulieren, da auch die gegen\"uberliegenden HalfEdges geteilt werden. Die verteilten Punkte werden Anschlie{\ss}end als neuer Punkt f\"ur die Subdivision verwendet, um so den Bruch konzentrisch vom Epizentrum ausgehen zu lassen. Zu guter Letzt werden die neuen Faces aus dem Mesh ausgetrennt und in ein eigenes Mesh umgewandelt, die einzelnen Bruchst\"ucke bewegen zu k\"onnen.
+Die Simulation basiert auf einem Punkt des Meshs, der das Zentrum der Zerst\"orung darstellt, vergleichbar mit dem Aufschlagpunkt eines Hammers. Um diesen Punkt herum werden zuf\"allig weitere Punkte platziert, je nach Material der getroffenen Face unterschiedlich viele - in gr\"o{\ss}er werden Abst\"anden. Von der direkt getroffenen Face wird jede Half-Edge gesplittet, um so gro{\ss}e Splitter, die sich durch das Material ziehen zu simulieren, da auch die gegen\"uberliegenden Half-Edges geteilt werden. Die verteilten Punkte werden anschlie{\ss}end als neuer Punkt f\"ur die Subdivision verwendet, um so den Bruch konzentrisch vom Epizentrum ausgehen zu lassen. Schlie{\ss}lich werden die neuen Faces aus dem Mesh ausgetrennt und in ein eigenes Mesh umgewandelt, die einzelnen Bruchst\"ucke bewegen zu k\"onnen.
 
-In Unity ist es wie unten programmiert:
+In Unity ist es wie folgt programmiert:
 \begin{lstlisting}
 public void SimulateBreaking(Vector3 impactPoint)
 {
@@ -355,7 +355,7 @@ public void SimulateBreaking(Vector3 impactPoint)
 \end{lstlisting}
 Bei der Bestimmung der Bruchpunkte wird der \textit{BreakingBehaviourDeterminer} verwendet, welcher zuf\"allige Punkte in gr\"o{\ss}er werdenden Kreisen platziert, relativ zu dem gew\"ahlten Punkt. Die Methode \textit{GetMaterialBreakingBehaviour} gibt eine Liste mit Integern zur\"uck, die die Anzahl an Punkten in jedem Kreis f\"ur ein Material vordefiniert.
 
-Der Code der \textit{GetBreakingPoints}-Methode sieht wie Folgt aus:
+Der Code der \textit{GetBreakingPoints}-Methode sieht wie folgt aus:
 \begin{lstlisting}
 public List<Vector3> GetBreakingPoints(Face face,
 	Vector3 impactPoint)

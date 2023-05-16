@@ -2351,15 +2351,17 @@
     <bcf:citekey order="5">Shirley2010</bcf:citekey>
     <bcf:citekey order="6">Shirley2010</bcf:citekey>
     <bcf:citekey order="7">Shirley2010</bcf:citekey>
-    <bcf:citekey order="8">Meshmash2017</bcf:citekey>
+    <bcf:citekey order="8">HalfEdgedMeshRepository</bcf:citekey>
     <bcf:citekey order="9">Meshmash2017</bcf:citekey>
-    <bcf:citekey order="10">Castello07</bcf:citekey>
-    <bcf:citekey order="11">Meshmash2017</bcf:citekey>
-    <bcf:citekey order="12">Unity</bcf:citekey>
-    <bcf:citekey order="13">Shirley2010</bcf:citekey>
-    <bcf:citekey order="14">WikipediaDolphin1</bcf:citekey>
-    <bcf:citekey order="15">Meshmash2017</bcf:citekey>
-    <bcf:citekey order="16">Castello07</bcf:citekey>
+    <bcf:citekey order="10">Meshmash2017</bcf:citekey>
+    <bcf:citekey order="11">Castello07</bcf:citekey>
+    <bcf:citekey order="12">Meshmash2017</bcf:citekey>
+    <bcf:citekey order="13">Unity</bcf:citekey>
+    <bcf:citekey order="14">Shirley2010</bcf:citekey>
+    <bcf:citekey order="15">WikipediaDolphin1</bcf:citekey>
+    <bcf:citekey order="16">HalfEdgedMeshRepository</bcf:citekey>
+    <bcf:citekey order="17">Meshmash2017</bcf:citekey>
+    <bcf:citekey order="18">Castello07</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

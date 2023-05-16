@@ -59,6 +59,34 @@
       \field{pages}{249\bibrangedash 256}
       \range{pages}{8}
     \endentry
+    \entry{HalfEdgedMeshRepository}{online}{}
+      \name{author}{1}{}{%
+        {{hash=26aea4876a0c8adc496f86248cfbbbb9}{%
+           family={Dittmar},
+           familyi={D\bibinitperiod},
+           given={Yannick},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{26aea4876a0c8adc496f86248cfbbbb9}
+      \strng{fullhash}{26aea4876a0c8adc496f86248cfbbbb9}
+      \strng{bibnamehash}{26aea4876a0c8adc496f86248cfbbbb9}
+      \strng{authorbibnamehash}{26aea4876a0c8adc496f86248cfbbbb9}
+      \strng{authornamehash}{26aea4876a0c8adc496f86248cfbbbb9}
+      \strng{authorfullhash}{26aea4876a0c8adc496f86248cfbbbb9}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; zuletzt besucht am 16.05.2023]}
+      \field{title}{HalfEdgedMesh}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/Thot38/HalfEdgedMesh
+      \endverb
+      \verb{url}
+      \verb https://github.com/Thot38/HalfEdgedMesh
+      \endverb
+    \endentry
     \entry{Shirley2010}{book}{}
       \name{author}{1}{}{%
         {{hash=5012a81732d78a8932a8ce70be852332}{%

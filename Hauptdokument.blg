@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Hauptdokument.blg'
-[117] biber-MSWIN64:340> INFO - === 
-[157] Biber.pm:418> INFO - Reading 'Hauptdokument.bcf'
-[281] Biber.pm:972> INFO - Found 5 citekeys in bib section 0
-[297] Biber.pm:4383> INFO - Processing section 0
-[311] Biber.pm:4574> INFO - Looking for bibtex file 'literatur.bib' for section 0
-[384] bibtex.pm:1713> INFO - LaTeX decoding ...
-[398] bibtex.pm:1518> INFO - Found BibTeX data source 'literatur.bib'
-[454] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[454] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[454] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[454] Biber.pm:4209> INFO - No sort tailoring available for locale 'de-DE'
-[463] bbl.pm:654> INFO - Writing 'Hauptdokument.bbl' with encoding 'ansinew'
-[466] bbl.pm:757> INFO - Output to Hauptdokument.bbl
+[129] biber-MSWIN64:340> INFO - === 
+[178] Biber.pm:418> INFO - Reading 'Hauptdokument.bcf'
+[309] Biber.pm:972> INFO - Found 6 citekeys in bib section 0
+[326] Biber.pm:4383> INFO - Processing section 0
+[339] Biber.pm:4574> INFO - Looking for bibtex file 'literatur.bib' for section 0
+[408] bibtex.pm:1713> INFO - LaTeX decoding ...
+[425] bibtex.pm:1518> INFO - Found BibTeX data source 'literatur.bib'
+[483] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[483] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[483] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[483] Biber.pm:4209> INFO - No sort tailoring available for locale 'de-DE'
+[493] bbl.pm:654> INFO - Writing 'Hauptdokument.bbl' with encoding 'ansinew'
+[496] bbl.pm:757> INFO - Output to Hauptdokument.bbl

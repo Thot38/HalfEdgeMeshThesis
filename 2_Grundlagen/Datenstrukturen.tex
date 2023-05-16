@@ -20,7 +20,7 @@ $
 
 \subsection{Winged-Edge Mesh}
 $
-n_v \times * (8 Byte \mathtt{\ [ref.\,von\,Vertex\,auf\,Edge]} + 12 Byte \mathtt{\ [Vector3]}) + \\
+n_v \times (8 Byte \mathtt{\ [ref.\,von\,Vertex\,auf\,Edge]} + 12 Byte \mathtt{\ [Vector3]}) + \\
 n_t \times 8 Byte \mathtt{\ [Referenz\,von\,Face\,auf\,Edge]} + \\
 1.5 \times n_t \mathtt{\ [Jede\,Edge\,wird\,von\,zwei\,Faces\,verwendet]} \times \\
 (4 \times 8 Byte \mathtt{[ref.\,der\,Kante\,auf\,andere\,Kanten]} + \\
@@ -32,7 +32,7 @@ $
 
 \subsection{Half-Edge Mesh}
 $
-n_v \times * (8 Byte \mathtt{\ [ref.\,von\,Vertex\,auf\,Edge]} + 12 Byte \mathtt{\ [Vector3]}) +\\
+n_v \times (8 Byte \mathtt{\ [ref.\,von\,Vertex\,auf\,Edge]} + 12 Byte \mathtt{\ [Vector3]}) +\\
 n_t \times 8 Byte \mathtt{[ref.\,von\,Face\,auf\,Edge]} + \\
 3 \times n_t (4 \times 8 Byte \mathtt{\ [ref.\,der\,HalfEdge\,auf\,den\,ausgehenden\,Punkt,\,die\, n\ddot{a}chste} \\
 \mathtt{und\,gegen\ddot{u}berliegende\,HalfEdge\,und\,die\,Face]}) \\

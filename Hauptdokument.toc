@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {3.1}Vergleich der Datenstrukturen}{8}{}%
 \contentsline {subsection}{\numberline {3.2}Implementierung der Komponenten}{9}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Klassenstruktur}{9}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Die Vertex, HalfEdge und Face Klassen}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Die Vertex, HalfEdge und Face Klassen}{10}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Listenklassen}{10}{}%
 \contentsline {subsection}{\numberline {3.3}Erstellen eines Half-Edge-Meshes}{11}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}GenerateUnityMesh}{11}{}%
